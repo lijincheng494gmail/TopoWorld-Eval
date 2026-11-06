@@ -6,6 +6,10 @@ The Git repository provides the technical reports, editable report sources, froz
 
 The dataset and historical responses are not tracked in ordinary Git history. Download them with `python scripts/download_release.py --output artifacts/reproducibility`. The downloader pins the version, SHA-256, and archive root from `docs/release.json`, rejects path traversal and archive symlinks, and refuses to overwrite an existing directory.
 
+### HTTPS certificate setup
+
+The one-time download needs a working trusted CA store in Python. On a Mac whose Python installation has no configured CA bundle, the verified local download used `SSL_CERT_FILE=/etc/ssl/cert.pem python3 scripts/download_release.py --output artifacts/reproducibility`. Use that path only where the system bundle exists; otherwise configure your Python installation's trusted certificate store. Offline scoring does not use HTTPS.
+
 ## Offline execution
 
 Use Python 3.13 and the pinned `requirements.txt`. After downloading the package, scoring itself is offline:
@@ -31,8 +35,10 @@ Allow approximately 160 MB for the unpacked package and 160 MiB for one new repl
 | Environment | Public-release evidence |
 |---|---|
 | macOS arm64, Python 3.13 | Full 730/730 replay and exact principal tables: [receipt](validation/macOS_run_receipt.json) |
-| Linux x86-64, Python 3.13 | The [GitHub workflow](../.github/workflows/reproduce.yml) provides a separate full-release replay when manually dispatched; its acceptance receipt is retained after execution |
+| Linux x86-64, Python 3.13.18 | Full 730/730 replay and exact principal tables: [receipt](validation/Linux_run_receipt.json), [successful run](https://github.com/lijincheng494gmail/TopoWorld-Eval/actions/runs/42242415082) |
 | Windows | Unsupported by the frozen Unix resource-limit worker; not verified |
+
+On 6 November 2026, GitHub Actions on Ubuntu 24.04 (Linux x86-64, Python 3.13.18) downloaded the published ZIP, matched all 730 scientific signatures, and regenerated both principal tables without differences. The evaluated source commit is recorded in the receipt. This adds independent platform validation without changing the frozen ZIP.
 
 The public GitHub workflow runs the small software examples on pushes. Its explicitly dispatched full-replay mode downloads the pinned public Release, runs all retained allocations on Ubuntu 24.04, compares both main table objects, and saves a small environment/commit/Release receipt. No API credentials or model calls are involved.
 

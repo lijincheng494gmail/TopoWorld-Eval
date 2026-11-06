@@ -91,7 +91,7 @@ This reevaluates the retained responses and regenerates the main tables. It requ
 
 ## Reproducibility
 
-Offline acceptance reproduces **730/730 frozen scientific scoring signatures** and the principal tables. This means deterministic scoring agrees with the frozen record, including its failures; it does not mean 730 correct model outputs or reproducible proprietary model sampling.
+Offline acceptance on **macOS arm64 (Python 3.13.0)** and **Linux x86-64 (Python 3.13.18)** reproduces **730/730 frozen scientific scoring signatures** and the principal tables. This means deterministic scoring agrees with the frozen record, including its failures; it does not mean 730 correct model outputs or reproducible proprietary model sampling.
 
 The [versioned Release](https://github.com/lijincheng494gmail/TopoWorld-Eval/releases/tag/v1.0.0) holds the complete package: images, task prompts, references, retained responses, frozen scorers, dependencies, and expected tables. Large assets are not stored in normal Git history. The package records its derivation from the accepted local scientific snapshot. Of 723 retained response files, 695 are byte-exact originals and 28 retain previously documented, length-preserving personal-path masking. Seven missing allocations and one empty response remain unchanged.
 

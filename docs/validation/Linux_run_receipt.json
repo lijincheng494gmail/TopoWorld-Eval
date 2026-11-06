@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "timestamp_utc": "2026-11-06T15:23:28.963783+00:00",
+  "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+  "machine": "x86_64",
+  "python": "3.13.18 (main, Oct 26 2026, 14:20:56) [GCC 13.3.0]",
+  "dependencies": {
+    "jsonschema": "4.26.0",
+    "jsonschema-specifications": "2025.9.1",
+    "referencing": "0.37.0",
+    "rpds-py": "2026.9.1",
+    "attrs": "26.1.0"
+  },
+  "source_commit": "bf9eb603e6173dd844c026fee3b8a3e5602f41d3",
+  "run_url": "https://github.com/lijincheng494gmail/TopoWorld-Eval/actions/runs/42242415082",
+  "release": {
+    "version": "1.0.0",
+    "tag": "v1.0.0",
+    "filename": "TopoWorld-Eval_Reproducibility_v1.0.0.zip",
+    "url": "https://github.com/lijincheng494gmail/TopoWorld-Eval/releases/download/v1.0.0/TopoWorld-Eval_Reproducibility_v1.0.0.zip",
+    "bytes": 76334674,
+    "sha256": "f42d601a246661e40abc18d489e67fb872d9766e427636062d60d92d84b7e64a",
+    "archive_root": "TopoWorld-Eval_Reproducibility_v1.0.0",
+    "evaluator_version": "2.2.1"
+  },
+  "replay_receipt": {
+    "status": "COMPLETE",
+    "python_version": "3.13.18 (main, Oct 26 2026, 14:20:56) [GCC 13.3.0]",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "jsonschema_version": "4.26.0",
+    "workers": 2,
+    "wall_seconds": 56.421868780000004,
+    "allocated": 730,
+    "raw_scientific_outputs_recomputed": true,
+    "model_API_calls": 0,
+    "new_training": false,
+    "original_or_exported_response_files_modified": false,
+    "full_host_logs_reread": false,
+    "execution_audit_source": "preserved metadata, not new host/model identity verification",
+    "frozen_signature_matches": 730,
+    "mismatches": 0
+  },
+  "frozen_signature_comparison": {
+    "compared": 730,
+    "matched": 730,
+    "mismatches": 0
+  },
+  "principal_tables_equal_frozen": {
+    "MAJOR_TABLES.json": true,
+    "PAIRED_BOOTSTRAP.json": true
+  },
+  "new_model_calls": 0
+}
