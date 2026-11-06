@@ -1,0 +1,24 @@
+{
+  "case_id": "SYNTHETIC_TWO_ROOMS",
+  "required_roles": [
+    "door",
+    "left",
+    "right"
+  ],
+  "geometric_required_roles": [
+    "door",
+    "left",
+    "right"
+  ],
+  "queries": [
+    {
+      "id": "Q01",
+      "predicate": "connected_by",
+      "args": [
+        "left",
+        "right",
+        "door"
+      ]
+    }
+  ]
+}

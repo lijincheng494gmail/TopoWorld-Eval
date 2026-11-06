@@ -1,0 +1,512 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "topoworld_executable_v1",
+  "title": "Bounded executable spatial world",
+  "type": "object",
+  "required": [
+    "schema",
+    "case_id",
+    "units",
+    "coordinate_system",
+    "frames",
+    "entities",
+    "sources",
+    "evidence",
+    "relations",
+    "task_bindings"
+  ],
+  "properties": {
+    "schema": {
+      "const": "topoworld_executable_v1"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "units": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "object",
+          "required": [
+            "length"
+          ],
+          "properties": {
+            "length": {
+              "enum": [
+                "normalized",
+                "m",
+                "meter",
+                "meters",
+                "ft",
+                "in"
+              ]
+            },
+            "metric_scale": {
+              "type": [
+                "number",
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "coordinate_system": {
+      "type": "object"
+    },
+    "frames": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "matrix_to_world"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "matrix_to_world": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "active"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "source_id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "quote": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entity"
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "predicate",
+          "args",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "predicate": {
+            "type": "string"
+          },
+          "args": {
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "ACTIVE",
+              "UNKNOWN",
+              "RETRACTED"
+            ]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "source_id",
+          "entity_ids"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "entity_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "bbox_xyxy": {
+            "type": [
+              "array",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "task_bindings": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "completeness": {
+      "type": "object",
+      "properties": {
+        "public_spaces_complete": {
+          "type": "boolean"
+        },
+        "scope": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "vec3": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "number"
+      }
+    },
+    "box": {
+      "type": "object",
+      "required": [
+        "min",
+        "max"
+      ],
+      "properties": {
+        "min": {
+          "$ref": "#/$defs/vec3"
+        },
+        "max": {
+          "$ref": "#/$defs/vec3"
+        }
+      }
+    },
+    "geometry": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "box",
+            "box_union",
+            "stair_run",
+            "unknown"
+          ]
+        },
+        "frame": {
+          "type": "string"
+        },
+        "purpose": {
+          "enum": [
+            "solid",
+            "free_space",
+            "opening",
+            "interface"
+          ]
+        },
+        "parameter_status": {
+          "enum": [
+            "HYPOTHETICAL_COMPLETION",
+            "EVIDENCE_SUPPORTED",
+            "MIXED",
+            "UNKNOWN"
+          ]
+        },
+        "parameter_evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "min": {
+          "$ref": "#/$defs/vec3"
+        },
+        "max": {
+          "$ref": "#/$defs/vec3"
+        },
+        "boxes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/box"
+          }
+        },
+        "start": {
+          "$ref": "#/$defs/vec3"
+        },
+        "end": {
+          "$ref": "#/$defs/vec3"
+        },
+        "width": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "thickness": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "steps": {
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 128
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "box"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "min",
+              "max"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "box_union"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "boxes"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "stair_run"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "start",
+              "end",
+              "width",
+              "thickness",
+              "steps"
+            ]
+          }
+        }
+      ]
+    },
+    "entity": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "room",
+            "corridor",
+            "balcony",
+            "wall",
+            "floor_slab",
+            "door_opening",
+            "window_opening",
+            "staircase",
+            "landing",
+            "obstacle",
+            "opening",
+            "stair_opening",
+            "semantic_type",
+            "depiction",
+            "unknown"
+          ]
+        },
+        "owner": {
+          "type": "string"
+        },
+        "host_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "host_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "room_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "floor_z": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "geometry": {
+          "$ref": "#/$defs/geometry"
+        },
+        "endpoint_interfaces": {
+          "type": "array",
+          "maxItems": 2,
+          "items": {
+            "type": "string"
+          }
+        },
+        "connects_rooms": {
+          "type": "array",
+          "maxItems": 2,
+          "items": {
+            "type": "string"
+          }
+        },
+        "opening_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "part_of": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "type_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "owner_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Explicit identity token for access/ownership; never a physical-connectivity condition."
+        },
+        "owner_description": {
+          "type": "string",
+          "description": "Descriptive text; not an identity token."
+        },
+        "part_ids": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 32,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          },
+          "description": "Bounded compound staircase physical parts, all parameterized straight runs and material landings."
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "staircase"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "endpoint_interfaces",
+              "connects_rooms"
+            ],
+            "properties": {
+              "endpoint_interfaces": {
+                "minItems": 2
+              },
+              "connects_rooms": {
+                "minItems": 2
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "x_scope": "Serialization shape only. Exact occupied-volume, frame support, type, source and topology checks are implemented separately. Passing this schema is not geometric success.",
+  "x_evaluation_contract": "2.2.0; v1 serialized fields retained, optional owner identity and part_ids documented. Schema validity alone does not prove geometry or compound assembly validity."
+}

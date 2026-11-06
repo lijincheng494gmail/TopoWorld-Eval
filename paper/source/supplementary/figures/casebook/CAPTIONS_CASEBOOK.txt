@@ -1,0 +1,13 @@
+I1. Historical Loft geometry: the same declared perimeter has components crossing both private flights. The panels use original normalized coordinates.
+
+I2. The generated endpoint and landing are laterally outside the declared upper terrace. Equal height does not provide the missing contact.
+
+I3. Identity is correct in Q08, while the internal-stair material is inconsistent. Registered exterior-stair geometry remains a separate check.
+
+I4. Lovell's generated landing floor is at its box bottom, 0.5 ft below the material top. The field exists; its geometric meaning is inconsistent.
+
+I5. Positive plan area does not satisfy a positive-volume box contract: the original landing has exactly zero height.
+
+I6. Equal final slab material has different detached-opening alarm counts. The diagnostic removes one alarm, not all remaining violations.
+
+I7. Tower detail of a real positive: six correct fixed relations, all five target roles, and both registered and all-declared fragment checks pass.

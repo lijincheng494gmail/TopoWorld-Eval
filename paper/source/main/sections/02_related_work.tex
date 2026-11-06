@@ -1,0 +1,33 @@
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Spatial questions and multi-view understanding.}
+OpenEQA evaluates questions about environments from remembered observations or active exploration~\cite{openeqa2024}.
+VSI-Bench studies video-based spatial recall and reasoning, including cognitive maps~\cite{thinkspace2025}.
+MMSI-Bench evaluates multi-image spatial intelligence, while MindCube examines mental modeling from limited views~\cite{mmsi2026,mindcube2025}.
+SpatialScore expands the range of spatial tasks and modalities~\cite{spatialscore2026}.
+These benchmarks cover varied spatial tasks.
+TopoWorld-Eval links answers about fixed targets to independently constructed, executable artifacts from the same architectural evidence.
+It measures whether the artifacts realize those relations, retain the intended image bindings, remain materially coherent, and respond to evidence changes.
+These output properties are not determined by answer accuracy alone.
+
+\paragraph{Structured reconstruction and scene generation.}
+Explicit scene representations are well established.
+SceneScript predicts structured commands that a geometry interpreter converts into a scene~\cite{scenescript2024}.
+SpatialLM generates architectural elements and object boxes from point clouds, and CAD-Recode generates executable Python CAD programs~\cite{spatiallm2025,cadrecode2025}.
+These systems recover inspectable scene or object structure through explicit geometric representations.
+Holodeck uses language-derived spatial constraints and layout optimization; PhyScene incorporates collision, layout, and reachability guidance~\cite{holodeck2024,physcene2024}.
+Holodeck~2.0 adds vision-language-guided generation and interactive editing~\cite{holodeck22025}.
+TopoWorld-Eval uses inspectable geometry as an evaluation interface for architectural drawings.
+Different coordinate completions are allowed when they realize the same evidence-supported target obligations.
+The measurement links independent task outputs and checks the generated materials, interfaces, and observation bindings; it does not require one reference surface reconstruction.
+
+\paragraph{Geometric constraints, feedback, and revision.}
+Geometrically-Constrained Agent already identifies a semantic-to-geometric gap and formalizes reference frames and objectives before constrained geometric computation~\cite{gca2026}.
+3DThinker uses geometric latent representations for reasoning from limited views~\cite{think3d2026}.
+These methods motivate a distinction between geometric reasoning mechanisms and the outputs used to evaluate them.
+TopoWorld-Eval measures independently produced answers and world artifacts, including whether supplied correct relations are realized without an invalid interface or material conflict.
+Self-Refine establishes feedback-based iterative improvement~\cite{selfrefine2023}; our main R/A/B routes preserve first outputs without checker feedback.
+Source withdrawal poses a separate question from scene editing: which conclusions remain supported after the evidence changes?
+Truth maintenance provides the established foundation of recorded justifications and invalidated assumptions~\cite{doyle1979}.
+Our revision test makes these effects observable by separating measured knowledge from hypothetical geometry and comparing the updated world with a fresh construction from the same effective evidence.

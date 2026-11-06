@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite the TopoWorld-Eval technical report and specify the evaluation release."
+type: software
+title: "TopoWorld-Eval: Grounded, Coherent, and Revisable 3D Worlds from Multi-View Architectural Evidence"
+authors:
+  - family-names: Li
+    given-names: Jincheng
+  - family-names: Li
+    given-names: Yuxuan
+version: 1.0.0
+date-released: 2026-11-06
+url: "https://github.com/lijincheng494gmail/TopoWorld-Eval"
+repository-code: "https://github.com/lijincheng494gmail/TopoWorld-Eval"
+abstract: "Benchmark, executable evaluation framework, and empirical analysis of grounded, coherent, and revisable 3D world construction from multi-view architectural evidence."
+keywords:
+  - spatial understanding
+  - multimodal evaluation
+  - executable geometry
+  - evidence revision
+  - architectural drawings

@@ -1,0 +1,69 @@
+% Public technical-report article layout.
+% Typography and spacing adapted from the computer-vision author-kit layout.
+% Source attribution is recorded in THIRD_PARTY_TEX.md.
+\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+\ProvidesPackage{topoworld_report}[2026/11/06 Public technical report layout]
+\RequirePackage{times,xspace}
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{graphicx,amsmath,amssymb,booktabs}
+\RequirePackage[numbers,sort&compress]{natbib}
+\setlength{\bibsep}{1pt plus 1pt minus 1pt}
+\RequirePackage{silence}
+\hbadness=10000 \vbadness=10000 \vfuzz=30pt \hfuzz=30pt
+\WarningFilter{latexfont}{Font shape declaration}
+\WarningFilter{latex}{Font shape}
+\RequirePackage{etoolbox}
+\RequirePackage[format=plain,labelformat=simple,labelsep=period,font=small,compatibility=false]{caption}
+\RequirePackage[font=footnotesize,skip=3pt,subrefformat=parens]{subcaption}
+\RequirePackage[hyphens]{url}
+\Urlmuskip=0mu plus 1mu\relax
+\font\elvbf=ptmb scaled 1100
+\font\tenbf=ptmb scaled 1000
+\setlength{\textheight}{8.875in}
+\setlength{\textwidth}{6.875in}
+\setlength{\columnsep}{0.3125in}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\parindent}{1pc}
+\setlength{\oddsidemargin}{-0.1875in}
+\setlength{\evensidemargin}{-0.1875in}
+\pagestyle{plain}
+\def\@maketitle{\newpage\null\vskip .375in
+\begin{center}{\Large\bf\@title\par}\vspace*{24pt}{\large\lineskip .5em
+\begin{tabular}[t]{c}\@author\end{tabular}\par}\vskip .5em\vspace*{12pt}\end{center}}
+\def\abstract{\centerline{\large\bf Abstract}\vspace*{12pt}\noindent\it\ignorespaces}
+\def\endabstract{\vspace*{12pt}}
+\def\twsection{\@startsection{section}{1}{\z@}{-10pt plus -2pt minus -2pt}{7pt}{\large\bf}}
+\def\twssect#1{\twsection*{#1}}
+\def\twsect#1{\twsection{\texorpdfstring{\hskip -1em.~}{}#1}}
+\def\section{\@ifstar\twssect\twsect}
+\def\twsubsection{\@startsection{subsection}{2}{\z@}{-8pt plus -2pt minus -2pt}{5pt}{\elvbf}}
+\def\twssubsect#1{\twsubsection*{#1}}
+\def\twsubsect#1{\twsubsection{\texorpdfstring{\hskip -1em.~}{}#1}}
+\def\subsection{\@ifstar\twssubsect\twsubsect}
+\def\twsubsubsection{\@startsection{subsubsection}{3}{\z@}{-6pt plus -2pt minus -2pt}{3pt}{\tenbf}}
+\def\twssubsubsect#1{\twsubsubsection*{#1}}
+\def\twsubsubsect#1{\twsubsubsection{\texorpdfstring{\hskip -1em.~}{}#1}}
+\def\subsubsection{\@ifstar\twssubsubsect\twsubsubsect}
+\renewcommand{\textfraction}{0.01}
+\renewcommand{\floatpagefraction}{0.99}
+\renewcommand{\topfraction}{0.99}
+\renewcommand{\bottomfraction}{0.99}
+\renewcommand{\dblfloatpagefraction}{0.99}
+\renewcommand{\dbltopfraction}{0.99}
+\setcounter{totalnumber}{99}\setcounter{topnumber}{99}\setcounter{bottomnumber}{99}
+\DeclareRobustCommand\onedot{\futurelet\@let@token\@onedot}
+\def\@onedot{\ifx\@let@token.\else.\null\fi\xspace}
+\def\eg{\emph{e.g}\onedot}\def\Eg{\emph{E.g}\onedot}
+\def\ie{\emph{i.e}\onedot}\def\Ie{\emph{I.e}\onedot}
+\def\cf{\emph{cf}\onedot}\def\Cf{\emph{Cf}\onedot}
+\def\etc{\emph{etc}\onedot}\def\vs{\emph{vs}\onedot}
+\def\wrt{w.r.t\onedot}\def\dof{d.o.f\onedot}\def\iid{i.i.d\onedot}\def\wolog{w.l.o.g\onedot}
+\def\etal{\emph{et al}\onedot}
+\AtEndPreamble{\usepackage[capitalize]{cleveref}
+\crefname{section}{Sec.}{Secs.}\Crefname{section}{Section}{Sections}
+\Crefname{table}{Table}{Tables}\crefname{table}{Tab.}{Tabs.}}
+\RequirePackage[shortlabels,inline]{enumitem}
+\setlist[itemize]{noitemsep,leftmargin=*,topsep=0em}
+\setlist[enumerate]{noitemsep,leftmargin=*,topsep=0em}

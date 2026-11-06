@@ -1,0 +1,17 @@
+\begin{minipage}{\textwidth}
+
+\centering
+\figfile{figures/case_figures/fig3_internal_stair_material_conflict.pdf}{\textwidth}
+\captionof{figure}{\textbf{A real conflict outside registered geometric scope.}
+The preserved N2/Idaho City/B world (GPT-5.6 Luna) realizes all eight
+fixed relations and passes registered checks. Its additional
+\texttt{STAIR\_INTERNAL} rises from $z=0$ to $10$\,ft while
+\texttt{SLAB\_2F} occupies $z\in[8,10]$\,ft without an opening.
+The frozen proof identifies three full-width blocked tread surfaces.
+The registered connection concerns a different, external stair.
+This is an all-declared material conflict, not a failure of that
+registered external-stair relation. The internal stair's identity is
+queried, but its material is outside the registered geometric scope.}
+\label{fig:conflict}
+
+\end{minipage}

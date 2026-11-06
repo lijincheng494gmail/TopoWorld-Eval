@@ -1,0 +1,47 @@
+{
+  "schema": "topoworld_public_release_local_replay_v1",
+  "status": "PASS",
+  "tested_utc": "2026-11-06T15:14:32.716155+00:00",
+  "release": "v1.0.0",
+  "evaluator_version": "2.2.1",
+  "source_final_supplement_sha256": "6e97c3cceb6808911044aed8ef1f912f8ff9c94877f9031b545f0be8902ed82e",
+  "run": {
+    "status": "COMPLETE",
+    "python_version": "3.13.0 (v3.13.0:60403a5409f, Oct  7 2024, 00:37:40) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "platform": "macOS-26.5-arm64-arm-64bit-Mach-O",
+    "jsonschema_version": "4.26.0",
+    "workers": 2,
+    "wall_seconds": 45.30601854203269,
+    "allocated": 730,
+    "raw_scientific_outputs_recomputed": true,
+    "model_API_calls": 0,
+    "new_training": false,
+    "original_or_exported_response_files_modified": false,
+    "full_host_logs_reread": false,
+    "execution_audit_source": "preserved metadata, not new host/model identity verification",
+    "frozen_signature_matches": 730,
+    "mismatches": 0
+  },
+  "frozen_comparison": {
+    "status": "PASS",
+    "compared": 730,
+    "matched": 730,
+    "mismatches": [],
+    "comparison_scope": "Original strict parser, Schema, limits, reference query values, complete deterministic assessment/provenance/grounding or revision knowledge/source/retained readouts; worker OS-limit metadata and bookkeeping paths excluded."
+  },
+  "table_checks": {
+    "MAJOR_TABLES.json": {
+      "objects_equal": true,
+      "fresh_sha256": "20c9c32d478c2b05aa6f5000446a6fc6fa7ddb89747850d24195ce0ab5555507",
+      "frozen_sha256": "20c9c32d478c2b05aa6f5000446a6fc6fa7ddb89747850d24195ce0ab5555507"
+    },
+    "PAIRED_BOOTSTRAP.json": {
+      "objects_equal": true,
+      "fresh_sha256": "4859b9031bd4664c29af34e207d1af1f00c5747c5c0bef601311e809b54c5bf6",
+      "frozen_sha256": "4859b9031bd4664c29af34e207d1af1f00c5747c5c0bef601311e809b54c5bf6"
+    }
+  },
+  "scope": "Re-evaluation of retained outputs and frozen statistics. No new provider sampling, training, or correction of model outputs.",
+  "linux_current_release": "Tracked by separate GitHub Actions run and receipt; local Docker daemon unavailable.",
+  "windows": "Unsupported by the frozen Unix resource worker; not tested."
+}

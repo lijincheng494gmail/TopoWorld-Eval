@@ -1,0 +1,36 @@
+{
+  "kind": "CHAPTER_STATIC_QA_AND_SAVED_FIXTURE_REPLAY",
+  "chapters": [
+    {
+      "file": "C_representation.tex",
+      "raw_english_words": 1498,
+      "environment_balance": "PASS",
+      "local_file_targets": "PASS",
+      "personal_path_scan": "PASS",
+      "sha256": "7dd72d1a0ad49a87478cd275de6ada6df7c3f302c733b0e4ce1e476b2a6b8a3f"
+    },
+    {
+      "file": "D_evaluator.tex",
+      "raw_english_words": 1494,
+      "environment_balance": "PASS",
+      "local_file_targets": "PASS",
+      "personal_path_scan": "PASS",
+      "sha256": "05163cb49a106d427d4eceed027729a630131cb384b00168f3f7d9314cd5acd0"
+    }
+  ],
+  "fixture_receipt": "SOFTWARE_FIXTURE_REPLAY.json",
+  "fixture_readouts": 9,
+  "fixture_worlds": 5,
+  "new_model_calls": 0,
+  "whole_research_rerun": false,
+  "figures_visually_inspected": [
+    "single_stair_fixture.png",
+    "opening_encoding_equivalence.png"
+  ],
+  "visual_result": "Labels, plotted material and query verdicts inspected; no overlap or crop observed.",
+  "compiler_not_run_here": "Parent owns full-document layout and compilation.",
+  "owned_output_bytes": 334301,
+  "post_layout_change": "Only discretionary wrapping of two parameter-status labels and prose separation of UNKNOWN and CONTRACT_INVALID; no data or semantics changed.",
+  "verifier_script_sha256": "c71283f46f25dfb0c073ce1e8aa81926133cbc4feca06fdbfc4ab925780d8134",
+  "portable_replay_new_directory_required": true
+}

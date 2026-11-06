@@ -1,0 +1,75 @@
+\section{Cross-Family Results and Grounding}
+\label{sec:crossfamily}
+
+\begin{center}
+\small
+\input{tables/qwen_main}
+\captionof{table}{Qwen \texttt{qwen3.8-max-0902} on allocated
+determinate opportunities. Of 42 unique first submissions, 39 returned
+complete responses and 38 satisfy the output contract. Transport and
+Schema failures remain in these denominators.}
+\label{tab:qwen}
+\end{center}
+
+\subsection{A model--interface comparison}
+Qwen receives the same 14 buildings and R/A/B core tasks through a
+tool-free multi-image API. Thinking is enabled with a 32,768-token
+budget, completion is capped at 49,152 tokens, and temperature is 0.6.
+Its R wrapper additionally contains the generic world Schema, whereas
+GPT-R does not. This Schema contains no building answers.
+GPT can crop assigned local pixels; Qwen uses submitted image inputs.
+The settings and tools are not compute-matched.
+
+Two initial non-streaming requests disconnected without final output.
+They remain failures, not retried replacements.
+The remaining 40 tasks each received one first streaming submission;
+one also disconnected. The comparison includes the actual delivery
+conditions, not just successful replies.
+
+\subsection{N2 mostly aligns answers and worlds}
+In N2, R is correct on 69/69 contract-valid opportunities, A on 62/63,
+and B on 69/70. Of 63 common-valid R/A opportunities, 62 are jointly
+correct and one is R-only. A/B share 58 valid opportunities:
+57 jointly correct and one jointly wrong, with no rescue or regression.
+The seven-readout increase on the full denominator from A to B comes
+from different failure sets, not paired content improvement.
+
+The single R/A mismatch is a school stair connection whose generated
+endpoint interface is a corridor, not a landing. This is a contract-level
+instantiation failure, not established evidence of wrong physical
+identity. The strong N2 alignment shows that the observed
+answer--construction difference varies across model--interface conditions.
+
+\subsection{CS1 exposes stair implementation failures}
+All six CS1 outputs are contract-valid. R/A/B yield 19/20, 16/20,
+and 16/20. All eight determinate identity relations per route are
+correct. Three A readouts fail despite correct R answers:
+a Lovell landing declares \texttt{floor\_z}=5.29\,ft while its
+material top is 5.79\,ft; a Gamble assembly's material differs from
+the union of its parts; another endpoint directly uses a corridor
+instead of a landing.
+
+B repairs the two-riser floor relation that R and A both missed,
+but damages a previously correct endpoint relation. A/B thus have
+one rescue and one regression despite equal totals.
+No definite material obstruction is detected in the 25 valid Qwen
+construction worlds.
+
+\subsection{Grounding and insufficient evidence}
+Grounding links world instances back to the assigned drawings.
+For GPT N2, given-point box IoU$\geq0.25$ holds in 446/656 A records
+and 440/656 B records (mean IoU 0.491/0.489); 16 abstract-region
+references per route are not evaluable. CS1 yields 49/88 and 40/88.
+This is not full-page detection or complete 3D grounding.
+
+Strict source-ID matching makes some Qwen boxes score zero:
+56 existing boxes use aliases such as \texttt{S\_V03} for
+\texttt{V03}. Under a lexical-alias diagnostic assumption, 55 reach
+the IoU threshold. This does not replace primary scores.
+Other failures lack target boxes or have low overlap; low IoU alone
+cannot establish that an object was not seen.
+
+On unresolved identity, GPT N2 preserves \unk{} only 2/24 times,
+versus 18/24 in v1. Qwen R/A assert identity and B fails to return:
+two unsupported certainties plus a service failure, not three proven
+identity errors.

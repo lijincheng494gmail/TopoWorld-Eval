@@ -1,0 +1,48 @@
+% Public technical report; scientific content retained from the frozen research manuscript.
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\usepackage{topoworld_report}
+\usepackage{array}
+\usepackage{microtype}
+\definecolor{reportblue}{rgb}{0.21,0.49,0.74}
+\usepackage[pagebackref,breaklinks,colorlinks,allcolors=reportblue]{hyperref}
+\newcommand{\tw}{\textsc{TopoWorld-Eval}}
+\newcommand{\unk}{\ensuremath{\mathrm{UNKNOWN}}}
+\newcommand{\neval}{\ensuremath{\mathrm{NOT\_EVALUABLE}}}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\figfile}[2]{\includegraphics[width=#2]{#1}}
+\title{TopoWorld-Eval: Grounded, Coherent, and Revisable\\
+3D Worlds from Multi-View Architectural Evidence}
+\author{Jincheng Li\qquad Yuxuan Li}
+\newcommand{\FullWidthBlock}[1]{\twocolumn[{#1\par\vspace{12pt}}]}
+\makeatletter
+\let\originalmaketitle\@maketitle
+\renewcommand{\@maketitle}{\originalmaketitle\input{sections/teaser}}
+\makeatother
+\hypersetup{pdftitle={TopoWorld-Eval: Grounded, Coherent, and Revisable 3D Worlds from Multi-View Architectural Evidence},pdfauthor={Jincheng Li; Yuxuan Li},pdfsubject={Public technical report}}
+\begin{document}
+\maketitle
+\input{sections/page1}
+\clearpage
+\input{sections/page2}
+\clearpage
+\FullWidthBlock{\input{sections/header_page3}}
+\input{sections/page3}
+\clearpage
+\input{sections/page4}
+\clearpage
+\FullWidthBlock{\input{sections/header_page5}}
+\input{sections/page5}
+\clearpage
+\FullWidthBlock{\input{sections/header_page6}}
+\input{sections/page6}
+\clearpage
+\input{sections/page7}
+\clearpage
+\input{sections/page8}
+\label{main:end}
+\clearpage
+\input{sections/llm_statement}
+{\small
+\bibliographystyle{ieeenat_fullname}
+\bibliography{references}}
+\end{document}

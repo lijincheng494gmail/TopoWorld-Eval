@@ -1,0 +1,36 @@
+
+
+\begin{abstract}
+Multimodal models can answer spatial questions without producing a coherent
+executable world. We introduce \tw{}, an evaluation of whether models
+construct and maintain grounded, geometrically consistent, and revisable
+worlds from multiple architectural drawings. It contains 14 buildings,
+42 drawing pages, 95 determinate relations, and one unresolved identity
+relation. We compare direct answering, independent world construction, and
+construction assisted by correct relations. Across eight GPT product
+configurations, the 12-building point-anchored condition yields 98.17\%
+answer accuracy and 88.50\% world-readout accuracy. Among jointly
+contract-valid opportunities, answering alone is correct in 34 cases and
+construction alone in five. Correct relations rescue 29 construction errors
+but introduce 11. Qwen largely aligns answering and construction in N2,
+while complex stairs expose interface failures. We also measure grounding,
+material consistency, and evidence withdrawal. Spatial answering,
+executable construction, and world maintenance require separate measurements.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+Our question is: \emph{Can multimodal models maintain a grounded,
+coherent, and revisable 3D world across multiple views and tasks?}
+A spatial assistant should refer to the same building when it answers,
+constructs, and revises. A stair seen in a plan must match the intended
+stair in a section. Its generated endpoints must meet the right floor
+surfaces. A window must keep its host across views. When a new section
+resolves a height ambiguity, the model should update that fact while
+preserving other supported relations.
+
+These requirements are related, but they are different tests. A correct
+sentence about a staircase does not establish an executable connection.
+A geometrically consistent program can describe the wrong building.
+Even a world that satisfies every fixed query may contain a conflict in
+additional generated material (Fig.~\ref{fig:teaser}).

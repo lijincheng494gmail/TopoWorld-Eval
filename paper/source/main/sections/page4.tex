@@ -1,0 +1,88 @@
+\section{Executable Worlds and Evaluation}
+\label{sec:evaluation}
+
+\subsection{A bounded executable interface}
+We summarize the implemented world as
+\begin{equation}
+W=(\mathcal O,\mathcal G,\alpha,\mathcal R,\mathcal P).
+\end{equation}
+\begin{table}[h]
+\centering\small
+\begin{tabular}{@{}lp{.77\columnwidth}@{}}
+\toprule
+Field & Executable meaning\\ \midrule
+$\mathcal O$ & Physical instances, parts, assemblies, interfaces\\
+$\mathcal G$ & Occupied or free regions in a shared coordinate frame\\
+$\alpha$ & Observation-to-instance bindings, including unresolved bindings\\
+$\mathcal R$ & Typed declarations: hosts, floors, identity, connections\\
+$\mathcal P$ & Sources, active status, and explicit support edges\\
+\bottomrule
+\end{tabular}
+\caption{World fields connect physical identity, executable geometry,
+and evidence support in one inspectable artifact.}
+\label{tab:world}
+\end{table}
+
+Boxes and box unions represent material, free space, openings, or interfaces.
+Straight stair runs expand into tread geometry; finite assemblies declare
+runs and landings. The assembly material must equal its parts' material
+union. Transforms are restricted to supported signed-axis permutations
+and translations. Unknown geometry is explicit.
+
+Rooms represent spatial regions, not solid obstacles. Walls, slabs, and
+treads occupy material. Hosted openings remove material rather than merely
+overlaying a rectangle. A stair's connection labels do not prove contact:
+its endpoint interfaces, landing top surfaces, host spaces, and run chain
+must satisfy the corresponding geometric tests. Observation identity is
+read from $\alpha$ and compared with the source-grounded reference.
+
+\subsection{Separate measurements}
+\textbf{Representation validity} distinguishes delivery, character/entity
+limits, JSON, Schema, and compilation. The frozen output budget is
+42,000 characters and 60 entities; first outputs are preserved without
+repair. Unsupported or unknown geometry is not counted as a definite
+physical error.
+
+\textbf{Relation realization} compares direct R answers or deterministic
+world readouts with the fixed reference queries. For each route,
+\begin{equation}
+\operatorname{Acc} =
+\frac{\#\,\text{correct determinate readouts}}
+     {\#\,\text{allocated determinate opportunities}}.
+\end{equation}
+Missing and contract-invalid outputs remain in this denominator.
+Reference-unknown identity is evaluated separately for appropriate
+uncertainty. A definite answer there is unsupported certainty, not
+necessarily a provably false physical claim.
+
+\textbf{Geometry coherence} has two scopes. Registered geometry checks
+geometric target roles and their dependency closure. All-declared geometry also
+checks additional generated structures. Material-obstruction tests
+identify declared material blocking supported tread/interface regions;
+they do not certify full body clearance. For scope $\Gamma$, joint success is
+\begin{equation}
+\label{eq:joint}
+\begin{aligned}
+J_\Gamma=\ind[&V\land C\\
+ &\land(\forall q\in K:\widehat y_q=y_q)\\
+ &\land\mathrm{Geom}_\Gamma(W)=\mathrm{PASS}],
+\end{aligned}
+\end{equation}
+where $V$ is contract validity, $C$ required coverage, and $K$ the
+determinate queries. We also report each component, because one scalar
+cannot distinguish missing geometry from an obstruction.
+
+\textbf{Grounding and revision} are separate. Given-point localization
+uses observation boxes and exact source IDs at IoU$\geq0.25$ against
+approximate reference boxes. Revision checks explicit measured knowledge,
+active sources and dependencies, and retained spatial readouts under
+current evidence.
+
+\subsection{Instrument qualification}
+N2 and CS1 prospectively use evaluator 2.2.1. Qualification includes 83
+unit tests, 29 independent re-encoding/counterexample checks, and a
+200-case blind-hole diagnostic. These are software checks, not building
+samples. Historical v1 was generated under 2.2 and uniformly reassessed;
+its score change is not model improvement. Original outputs and scores
+remain intact. A later slab-encoding limitation is reported with the
+results rather than selectively changing one model's score.

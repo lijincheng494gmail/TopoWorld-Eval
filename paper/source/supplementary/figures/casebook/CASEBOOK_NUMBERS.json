@@ -1,0 +1,116 @@
+{
+  "cases": [
+    {
+      "id": "I1",
+      "figure": "I01_loft_wall_two_stairs.pdf",
+      "title": "Loft wall/stair occupancy",
+      "evaluator_version": "development geometry instrument v2",
+      "interpretation": "Independent stored raw-primitive/GEOS witnesses cover a full-width strip. No private images are reproduced.",
+      "new_model_evidence": false
+    },
+    {
+      "id": "I2",
+      "figure": "I02_farnsworth_endpoint.pdf",
+      "title": "Farnsworth endpoint mismatch",
+      "evaluator_version": "2.0.0 (historical; no regrading)",
+      "interpretation": "A definite endpoint-on-room-floor failure, not a JSON or unknown-geometry failure.",
+      "new_model_evidence": false
+    },
+    {
+      "id": "I3",
+      "figure": "I03_c03_registered_vs_material.pdf",
+      "title": "C03 identity and material scope",
+      "evaluator_version": "2.2.1 / N2",
+      "interpretation": "Internal stair identity is queried; only its material is outside the registered geometric scope. The external-stair connection is registered separately.",
+      "new_model_evidence": false
+    },
+    {
+      "id": "I4",
+      "figure": "I04_qwen_lovell_landing.pdf",
+      "title": "Qwen landing support inconsistency",
+      "evaluator_version": "2.2.1 / CS1",
+      "interpretation": "The field exists. Its value equals the box bottom, rather than its material top; the saved reader returns NOT_EVALUABLE/UNKNOWN.",
+      "new_model_evidence": false
+    },
+    {
+      "id": "I5",
+      "figure": "I05_astra_zero_height.pdf",
+      "title": "Astra zero-height landing",
+      "evaluator_version": "2.0.0 (historical; no regrading)",
+      "interpretation": "An executable-representation refusal, not proof that the intended physical interface is impossible.",
+      "new_model_evidence": false
+    },
+    {
+      "id": "I6",
+      "figure": "I06_equivalent_slab_alarm.pdf",
+      "title": "Slab equivalence counterexample",
+      "evaluator_version": "2.2.1 diagnostic, not new model evidence",
+      "interpretation": "Only an encoding-sensitive alarm disappears. The full world remains VIOLATION and the fixed/registered primary results do not change.",
+      "new_model_evidence": false
+    },
+    {
+      "id": "I7",
+      "figure": "I07_true_fragment_pass.pdf",
+      "title": "Positive San Xavier generated fragment",
+      "evaluator_version": "2.2.1 / N2",
+      "interpretation": "A positive for the bounded declared artifact and its covered target roles; no full-building, unseen-obstacle, or navigation certification.",
+      "new_model_evidence": false
+    }
+  ],
+  "numerical_summary": {
+    "I1": {
+      "ninth_tread_top": 1.35,
+      "wall_top": 2.8,
+      "intersection_volume_each": 0.03,
+      "units": "normalized"
+    },
+    "I2": {
+      "endpoint_x": 31,
+      "terrace_x_interval": [
+        0,
+        22
+      ],
+      "units": "ft"
+    },
+    "I3": {
+      "identity_query": "Q08",
+      "identity_correct": true,
+      "fixed_queries": "8/8",
+      "registered_geometry": "PASS",
+      "blocked_tread_z_ft": [
+        8.125,
+        8.75,
+        9.375
+      ]
+    },
+    "I4": {
+      "landing_floor_z_ft": 5.29,
+      "landing_material_top_ft": 5.79,
+      "readout": "UNKNOWN"
+    },
+    "I5": {
+      "height_ft": 0,
+      "readout": "NOT_EVALUABLE"
+    },
+    "I6": {
+      "final_material_volume_ft3": 155.48911499999997,
+      "extra_detached_row": [
+        1,
+        0
+      ],
+      "full_status": [
+        "VIOLATION",
+        "VIOLATION"
+      ]
+    },
+    "I7": {
+      "correct": 6,
+      "opportunities": 6,
+      "roles_present": 5,
+      "roles_required": 5,
+      "all_declared": "PASS_DECLARED_FRAGMENT"
+    }
+  },
+  "new_model_calls": 0,
+  "raw_scores_changed": false
+}

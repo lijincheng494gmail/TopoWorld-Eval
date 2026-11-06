@@ -1,0 +1,67 @@
+\section{Full GPT Results and Paired Analyses}\label{app:E}
+\subsection{Allocation, configurations, and denominators}
+The GPT record contains 688 allocated task stages: 288 v1 static tasks, 288 N2 static tasks, 48 CS1 static tasks, and 64 evidence-revision stages. The static total is therefore 624, not 688. Each static condition has R, A, and B. The eight recorded Codex configurations are 6 Astra, 6.1 Sol, 6.1 Terra, 6 Sol, 6 Luna, 5.6 Sol, 5.6 Terra, and 5.6 Luna, all with the recorded \texttt{xhigh} setting. These are eight product configurations from one provider family.
+
+There are 684 standard-path raw files, of which 683 are nonempty. The frozen ledger classifies 651 stages as scored, seven as Schema failures, 25 as raw/parse failures, four as missing outputs, and one with a coarse output-limit label. The last label belongs to a CS1 \texttt{world:null} response and should not be read as a measured character overflow. The release retains the frozen status and this qualification. Appendix~\ref{app:J} reports failures separately from content errors.
+
+Table~\ref{tab:E-main} uses every allocated determinate query opportunity. A failed output earns no correct readout but remains in the denominator. Table~\ref{tab:E-config} expands the result by configuration. The supplied B relations improve some constructions, but the improvement is neither universal nor sufficient to guarantee coherent geometry.
+
+\begin{table}[htbp]\centering
+\begin{tabular}{lrrr}\toprule Input & R & A & B\\\midrule
+v1 & 599/600 & 541/600 & 550/600\\
+N2 & 589/600 & 531/600 & 537/600\\
+CS1 & 146/160 & 115/160 & 125/160\\\bottomrule
+\end{tabular}
+\caption{Correct determinate readouts under evaluator 2.2.1, including all allocated opportunities. v1 and N2 share buildings. CS1 B is 78.13\% under decimal half-up rounding.}\label{tab:E-main}
+\end{table}
+
+\begin{table}[htbp]\centering\small
+\input{tables/configuration}
+\caption{Full configuration results. v1/N2 each have 12 tasks per route, 75 determinate obligations per configuration; CS1 has two tasks and 20 obligations. A/B valid means contract-scorable, not geometrically correct.}\label{tab:E-config}
+\end{table}
+
+\subsection{A paired comparison on common-valid tasks}
+The full denominator measures the delivered system, including format and delivery. To examine task-content differences, Table~\ref{tab:E-paired} pairs queries only when both compared outputs are contract-valid. It does not discard geometric errors. The resulting denominator can differ between R--A and A--B because validity depends on the compared routes.
+
+\begin{table}[htbp]\centering\small
+\input{tables/gpt_paired}
+\caption{Common-valid paired outcomes. First-only means the first route is correct and the second is wrong or unevaluable. For R--A this is an answer-to-construction loss; for A--B, second-only is a relation-assisted rescue.}\label{tab:E-paired}
+\end{table}
+
+N2 has 34 R-correct/A-incorrect outcomes and five in the other direction among 570 common-valid obligations. The difference A minus R is $-5.09$ percentage points. A building-cluster bootstrap with 20,000 resamples and seed 20261105 gives a percentile interval of $[-9.29,-1.55]$ points. This interval describes the observed configuration ensemble on resampled buildings; it does not turn configurations or correlated questions into independent architectural samples.
+
+For N2 A--B, B rescues 29 obligations and loses 11 among 533 common-valid pairs, a net difference of $+3.38$ points with interval $[0.19,6.42]$. Using all 600 allocated opportunities instead gives 50 rescues and 44 regressions, a net gain of six correct readouts. The two analyses answer different questions. The latter includes changes in output validity, while the former compares content on a shared valid subset. Neither should be substituted for the other without its denominator.
+
+CS1 has 15 R-only versus two A-only outcomes, and 15 B-only versus five A-only outcomes, on 140 common-valid pairs for each contrast. Only two buildings contribute. We report these counts without a broad population confidence claim. The comparison is informative about these difficult drawings, but it is not a precise prevalence estimate for all complex staircases.
+
+\subsection{Building and relation-type results}
+Table~\ref{tab:E-building} shows the N2 and CS1 results by building, aggregated across the eight configurations. This aggregation keeps a hard building from disappearing in a high overall average. Table~\ref{tab:E-predicate} separates relation types. Both use full allocated opportunities; UNKNOWN is excluded from determinate accuracy and evaluated separately.
+
+\begin{table}[htbp]\centering\small
+\input{tables/by_building}
+\caption{Correct readouts by building and route, pooling eight fixed configurations within each row. These are repeated measurements on a building, not independent buildings.}\label{tab:E-building}
+\end{table}
+
+\begin{table}[htbp]\centering\small
+\input{tables/by_predicate}
+\caption{Determinate readouts by predicate. Differences combine relation difficulty, the available drawings, representation support, and delivery reliability.}\label{tab:E-predicate}
+\end{table}
+
+The granularity of a target can change the apparent error. Gamble Q01 is the ordinary \texttt{same\_floor} comparison, with R/A/B counts 8/8, 8/8, and 7/8. Gamble Q04 is a \texttt{stair\_connects} query, with 8/8, 4/8, and 2/8. Earlier narrative summaries incorrectly attached the ordinary-floor interpretation to Q04. The present tables use the frozen query IDs and predicates; no answer or score has been changed. Lovell Q04 is a separate local two-riser \texttt{same\_floor} question, with 0/8, 2/8, and 5/8. These examples show why a result must be traced to the actual query rather than to a remembered label.
+
+\subsection{World coherence is a separate measurement}
+Table~\ref{tab:E-world} adds geometry and coverage. All-relations-correct means that every determinate fixed query is correct for that world. Registered geometry checks the explicitly registered geometric roles and their dependencies. All-declared geometry also examines additional submitted entities. The joint result requires contract validity, required geometry coverage, correct determinate relations, and a PASS at the specified scope.
+
+\begin{table}[htbp]\centering\small
+\input{tables/world_full}
+\caption{World-level results, out of allocated A/B worlds. Reg./Decl. are geometry PASS counts; joint also requires complete determinate correctness and coverage. Block means a definite represented material obstruction, a narrower class than all geometric violations.}\label{tab:E-world}
+\end{table}
+
+In N2, A has 69 all-relations-correct worlds and B has 78, but their all-declared joint counts are only 14 and 13 out of 96. A registered PASS is narrower: it does not certify every entity that the model chose to add. Conversely, an all-declared failure may concern a newly introduced fragment outside the registered geometric roles. This can be scientifically relevant without being a failure of a fixed local query.
+
+N2 contains three definite material-blocking worlds. All three have every determinate fixed relation correct: 5.6 Luna's A and B Drayton Hall worlds, and its B Idaho City Schoolhouse world. In the latter, the internal staircase identity is itself queried by Q08, but its material geometry is outside the registered geometric-role list. It is therefore incorrect to call the internal stair wholly unqueried. The distinction is between an identity obligation and registered geometric scope.
+
+\subsection{What the result establishes}
+The observed configurations are generally strong at answering the selected relations, especially with semantic locators. Constructing a world imposes additional requirements that are not captured by a direct-answer score. Some losses are contract failures, some are interface or assembly errors, and a smaller set are explicit material conflicts. Relation assistance changes these outcomes but does not monotonically improve every building or every quality measure.
+
+These results support measuring several output properties jointly. They do not establish a universal inability to reason spatially, a hidden internal world model, or a causal explanation based only on separate R/A generations. The casebook and common-valid analyses narrow the interpretation by identifying actual mechanisms and by retaining positive constructions as well as failures.

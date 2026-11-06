@@ -1,0 +1,65 @@
+\section{Benchmark Design}
+\label{sec:benchmark}
+
+
+
+\subsection{Sources, targets, and references}
+The dataset contains 14 buildings and 42 whole drawing pages from public
+measured-building records, including plans, elevations, and sections.
+Twelve buildings provide 75 determinate relations and one unresolved
+identity relation. Lovell House and Gamble House add 20 determinate
+relations involving more complex stair fragments. Source pages, public
+view permutations, target locations, and reference rationales are retained
+with hashes. We do not treat pages or repeated tasks as new buildings.
+
+The 95 determinate relations cover above/below, same-floor membership,
+separation, door and window hosts, connectivity, and cross-view identity.
+References were assembled by AI-assisted source inspection, cross-checked
+in a separate AI review, and subsequently reviewed by the author across
+all 96 obligations. They specify supported relations and uncertainty, not
+a complete measured 3D model.
+
+The unresolved example concerns a staircase at the same location in
+drawings from different periods. Position alone does not establish that
+the physical object was never replaced. Its reference remains \unk{}.
+Different image IDs, repeated type numbers, or similar projections do
+not themselves decide physical identity.
+
+\subsection{Input conditions}
+\textbf{N2: point-anchored understanding.}
+For 12 buildings, anonymous targets receive normalized image points and
+class hints. Models must infer extent, instance correspondence, floor
+surface, and host from the pixels. Printed image labels are allowed.
+Reference boxes, private bindings, and external descriptions are excluded.
+
+\textbf{CS1: point and target-unit anchors.}
+Two new buildings also specify whether a target is one straight flight
+or an assembly between adjacent primary floor plans. The unit information
+does not supply the correct cross-view mapping. Because it changes the
+input, CS1 is reported separately from N2.
+
+\textbf{Historical v1.}
+An earlier pass on the same 12 N2 buildings used richer semantic locators
+that could cue room or host information. It remains a development input
+control, not an additional independent building set. Its results are
+reported in the supplement.
+
+\subsection{Three routes on the same evidence}
+\textbf{R---direct answering} returns TRUE, FALSE, or \unk{} for fixed
+queries with source references.
+\textbf{A---independent construction} returns world JSON under the public
+contract; the evaluator reads the queries from this artifact.
+\textbf{B---relation-assisted construction} additionally receives correct
+determinate relation values, but no reference geometry.
+All three are independent contexts. A never reads R, and B never reads A.
+Their comparisons test task performance and the effect of relation
+assistance, not a common hidden state being translated into coordinates.
+
+\subsection{Scope and ambiguity}
+Targets define a fragment rather than the whole building. Multiple
+geometries can realize the evidence, so unmeasured dimensions may be
+marked as hypothetical completions. Missing geometry does not become a
+pass: required coverage and query readouts are still checked. Data are
+public drawings rather than RGB walkthroughs; pretraining exposure is
+unknown. Building identities are distinct, but layout-family independence
+is not established.

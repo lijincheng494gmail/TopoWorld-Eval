@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "tag": "v1.0.0",
+  "filename": "TopoWorld-Eval_Reproducibility_v1.0.0.zip",
+  "url": "https://github.com/lijincheng494gmail/TopoWorld-Eval/releases/download/v1.0.0/TopoWorld-Eval_Reproducibility_v1.0.0.zip",
+  "bytes": 76334674,
+  "sha256": "f42d601a246661e40abc18d489e67fb872d9766e427636062d60d92d84b7e64a",
+  "archive_root": "TopoWorld-Eval_Reproducibility_v1.0.0",
+  "evaluator_version": "2.2.1"
+}

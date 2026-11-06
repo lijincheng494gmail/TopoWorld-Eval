@@ -1,0 +1,66 @@
+\section{Statistics, Failure Accounting, and Reproducibility}\label{app:J}
+\subsection{Primary and conditional estimands}
+Let $c_{mbqr}$ be one when configuration $m$ answers determinate query $q$ for building $b$ correctly in route $r$, and zero otherwise, including a failed or unevaluable allocated output. The primary accuracy is
+\begin{equation}
+\widehat a_r=\frac{\sum_{m,b,q\in Q_b^{\rm det}}c_{mbqr}}
+{\sum_{m,b}|Q_b^{\rm det}|}.
+\end{equation}
+This is an allocated-opportunity measure. It includes delivery reliability and does not assign a cognitive cause to a failed parser result. UNKNOWN obligations are scored separately because evidence sufficiency differs from determinate truth.
+
+For a route pair $(r,s)$, the common-valid subset contains the query opportunities for which both task outputs are contract-scorable. A paired table counts both correct, first-only, second-only, and neither. Geometry failures within a valid world remain in this subset. The conditional paired difference is
+\begin{equation}
+\widehat\Delta_{s-r}=\frac{n_{s\text{-only}}-n_{r\text{-only}}}{n_{\rm common}}.
+\end{equation}
+This quantity must be accompanied by the common-valid denominator. It is not interchangeable with the difference between two full-denominator accuracies when validity changes across routes.
+
+World success adds further requirements. For each allocated construction, we report the conjunction of contract validity, required coverage, all determinate relations correct, and geometry PASS. Registered and all-declared geometry use different scopes. A NOT\_EVALUABLE result is not a PASS. A material-block flag is a narrower diagnostic than every kind of geometric violation, so it is also reported separately.
+
+\subsection{Bootstrap and dependence}
+The recorded N2 paired intervals use 20,000 building-cluster bootstrap resamples with seed 20261105. A resample draws 12 building IDs with replacement. It retains the configuration/query measurements belonging to each drawn building and recomputes the paired difference. The reported interval is the 2.5th--97.5th percentile range.
+
+This preserves within-building dependence rather than treating every relation as an independent sample. The eight configurations are fixed conditions from one family, not eight random provider draws. The analyses were developed after inspecting results and are exploratory. There is no correction establishing a confirmatory family of many predicate-wise tests. The two-building CS1 counts are shown without a broad bootstrap generalization claim.
+
+v1 and N2 use the same 12 buildings. Pooling them as independent architectural samples would overstate the data. Likewise, 688 stages are not 688 independent buildings. These counts are still useful for task-level reliability and mechanism analysis; the distinction is about the estimand and uncertainty, not a reason to discard the observations.
+
+\subsection{Status ledger and operational departures}
+Table~\ref{tab:J-status} preserves the frozen failure categories. Missing/empty files, parsing, Schema validation, unknown geometry, a typed interface violation, and a physical obstruction occur at different stages. A single aggregate error rate cannot locate their causes.
+
+\begin{table}[htbp]\centering\small
+\input{tables/failure_status}
+\caption{Frozen task statuses. P is raw/parse failure, S Schema failure, M missing output, and L the coarse limit label. The CS1 L case is a null world, not a measured size breach. Qwen M includes its three transport losses.}\label{tab:J-status}
+\end{table}
+
+Original outputs are not repaired. A uniquely retained artifact at a wrong location remains a diagnostic rather than a primary replacement. Complete host/session logs stay in the internal record because they can contain personal information. The anonymous package instead includes the task ledger, raw-output derivatives, model settings, source hashes, public input material, and the static scoring dependencies.
+
+\subsection{What is actually replayable}
+The package is organized around the chain
+\begin{center}
+saved response $\rightarrow$ strict parse $\rightarrow$ Schema validation $\rightarrow$\par
+frozen bounded reader/compiler $\rightarrow$ per-query and world diagnostics.
+\end{center}
+It includes all 723 existing standard-path raw files as anonymous derivatives, and records seven absent allocations rather than inventing files for them. It includes the 42 public page PNGs, portable case/query/reference files, the frozen executable Schema, geometry code, static and revision scoring code, and manifests. It does not call a model or require an API credential.
+
+The replay script is a portable path wrapper around the frozen scientific functions. Geometry and Schema content hashes are recorded. Where environment paths must change, the manifest records the transformation rather than claiming the entire host workflow is byte-identical. The wrapper reproduces the primary per-task scientific signature, including failures, query readouts, geometry states, and revision fields. It does not copy a final score table and call that rescoring.
+
+The local verification executes two complete 730-allocation replays: one from the retained local original responses, one from the anonymous exported responses. The count is 688 GPT stages plus 42 Qwen allocations, including the seven absent files. It compares each scientific signature to its frozen historical result and compares the two replay sets. Detailed receipts and hashes are in the release. An unpacked copy is also exercised to check that scoring does not accidentally depend on the original absolute project path.
+
+This verifies deterministic scoring of the saved material on the tested macOS environment. It does not regenerate model outputs, reproduce live Codex routing, prove another operating system has been tested, or recover a provider's unreported inference implementation. The vendor binary is specific to macOS arm64 and CPython 3.13. Other compatible POSIX environments need the pinned requirements and remain untested. The frozen worker uses POSIX resource controls; Windows requires a separate process-limit adapter and is not supported by this release.
+
+\subsection{Anonymous derivatives and provenance}
+Some original responses contain personal absolute paths in source or archival provenance fields. The local originals remain untouched. The anonymous export masks identifying string spans while preserving the length and encoded byte count relevant to the output-size rule. It does not reserialize JSON, repair malformed text, alter entity IDs, move coordinates, or change relation values. Exported and original hashes are both retained in the private provenance map; the public manifest identifies derivatives explicitly.
+
+This distinction avoids two errors: presenting a sanitized artifact as an unchanged original, or leaking private paths merely to preserve an exact byte-for-byte public copy. Scoring invariance is checked through the actual frozen reader, not assumed from a text-diff inspection. Malformed originals stay malformed in the release.
+
+The anonymous archive excludes internal absolute-path maps, original private photographs, session logs, credentials, account pages, and the author's local source-directory names. The source catalogue keeps public building names because they are task evidence, not author identity. Public source links document provenance; they do not substitute for contributed material that the reviewer must retrieve elsewhere.
+
+\subsection{Reproduction procedure and outputs}
+Start with the package README and run its manifest verification. Install the pinned small Python dependencies only if they are not already available. Then run the offline replay command from the unpacked package root. The runner writes new outputs to a fresh directory. It does not overwrite the frozen reference scores or raw responses. The comparison report should show no change in scientific signatures for the released primary allocations.
+
+The release also includes the 4,416-row static query table, configuration/route aggregates, paired counts and bootstrap specification, the 688-stage GPT ledger, the 42-task Qwen ledger, source qualifications, and evaluator diagnostic summaries. These tables enable transparent aggregation; the raw replay provides the stronger check that their readouts can be regenerated.
+
+Main-paper claims have an internal claim-to-evidence index. It maps each major result to a main page/table or figure, the relevant appendix, machine-readable fields, source paths, and hashes. This internal index can retain local provenance without putting private paths in the anonymous archive. It is an author audit aid, not a replacement for the inspectable evidence in the release.
+
+\subsection{Interpretation and remaining coverage}
+The report establishes a benchmark and empirical decomposition: direct answers, construction readouts, represented material coherence, localization, and revision behavior can differ. It does not presuppose that a complex new network is necessary. The useful next methods should address a verified residual mechanism under matched information, with ordinary constraint and provenance methods as strong baselines.
+
+Remaining work includes unprompted object discovery, further uncertainty cases and building families, metric reconstruction, and raw-evidence recompilation after identity/scope changes. Appendix~\ref{app:D} records the checker's remaining material-encoding sensitivity.

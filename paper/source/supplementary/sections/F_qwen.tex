@@ -1,0 +1,53 @@
+\section{Cross-Family Qwen Experiment}\label{app:F}
+\subsection{Actual model and request environment}
+The cross-family comparison uses the requested and returned API snapshot \texttt{qwen3.8-max-0902}. The saved request enables thinking with a 32,768-token budget, sets maximum completion to 49,152 tokens, and uses temperature 0.6. The API returns ordinary text JSON. No forced repair, geometry feedback, or second primary attempt is applied.
+
+Qwen receives the same public building images, locators, fixed questions, and A/B scientific contract. It runs as a tool-free multi-image request. Codex can instead read local assigned images and create crops from their pixels. Qwen R also receives a generic world Schema that is absent from the GPT R allowlist. The Schema contains no building-specific answers or reference coordinates. Nevertheless, the extra input and the tool difference are real conditions. The comparison is between model--interface systems, not a calibrated pure effect of neural weights or equal compute.
+
+The request setting cannot be equated to Codex \texttt{xhigh}. A reasoning-token budget and a product effort label are different controls. Returned snapshot identifiers, request settings, usage where available, timing, and transport status are retained. A current provider model list would not establish what ran; the saved request and response records establish this experiment's identity.
+
+\subsection{42 allocations, 39 complete replies, 38 scorable outputs}
+The first two non-streaming submissions disconnect at about 61 seconds. They return no raw response or token usage and remain failed primary allocations. The remaining 40 are first submissions using a recorded streaming path. Six finish at concurrency two. The 34 not yet started are then queued at concurrency six; one streaming request also disconnects. Thus there are 42 allocated tasks, 39 complete replies, and 38 contract-scorable results. The incomplete allocations are not silently retried.
+
+The transport has a 90-second socket-idle limit and checks a 900-second elapsed limit when a line arrives. This is not an exact 900-second process termination. A local scheduling error and the controlled queue change are recorded as execution events. They are not evidence of a spatial reasoning failure. The one completed Schema-invalid response is likewise distinct from the three transport losses.
+
+\subsection{Full and common-valid results}
+Table~\ref{tab:F-main} retains all allocated determinate opportunities. N2 yields 69/75 direct R answers, 62/75 A readouts, and 69/75 B readouts. Among valid outputs the corresponding counts are 69/69, 62/63, and 69/70. For CS1, all six task outputs are valid: R is 19/20, and both A and B are 16/20.
+
+\begin{table}[htbp]\centering
+\input{tables/qwen_main}
+\caption{Qwen full-denominator results under evaluator 2.2.1. The four invalid or absent task outputs are retained. CS1 has no such exclusion.}\label{tab:F-main}
+\end{table}
+
+\begin{table}[htbp]\centering\small
+\input{tables/qwen_paired}
+\caption{Qwen common-valid query pairs. These isolate shared valid outputs and should be read alongside the allocated denominator.}\label{tab:F-paired}
+\end{table}
+
+On the N2 R--A common-valid subset, 62 of 63 obligations are correct in both, and one is R-only. On the A--B subset, 57 of 58 are correct in both and one is wrong in both. There are no rescues or regressions in this shared valid A--B subset. The full 75-opportunity A--B comparison instead has 12 rescues and five regressions, a net gain of seven correct readouts. That gain is seven readouts, not seven percentage points, and it is largely tied to which task outputs are available and valid.
+
+CS1 has 16 both-correct R--A pairs, three R-only pairs, no A-only pair, and one wrong in both. For A--B, 15 are correct in both, one is A-only, one B-only, and three wrong in both. B changes the identity of the errors without changing the total 16/20 score. This is why aggregate accuracy alone is inadequate for evaluating an assistance mechanism.
+
+\subsection{Concrete construction losses}
+All eight CS1 identity obligations are correct in each of R, A, and B for Qwen. The construction losses are therefore not explained by a blanket failure to associate the requested observations. Three R-correct/A-failed queries concern executable interfaces: Lovell Q09, Gamble Q04, and Gamble Q09.
+
+Lovell Q09 has a submitted landing with \texttt{floor\_z}=5.29, while the top of its represented platform box is 5.79. The landing's declared floor is not its actual support surface. Gamble Q04 concerns a parent staircase whose submitted material does not match the union of its declared parts. Gamble Q09 names an endpoint as a corridor rather than supplying the required landing interface. These are three different contract/geometric mechanisms; they should not be collapsed into one visual detection error.
+
+Lovell Q04 concerns a local two-riser transition. R and A are wrong, while B realizes that relation correctly. The B output also damages Q01's interface. This case supports both the usefulness and the limits of supplied relation values. A local rescue does not imply that the new world preserves other previously correct obligations.
+
+There are 25 valid Qwen construction outputs and no definite material-blocking case in that set. This is a useful positive observation for the represented fragment. It does not erase interface violations or unknown coverage, and it does not establish that all true obstacles or full-building navigation were recovered.
+
+\subsection{Grounding and source aliases}
+Table~\ref{tab:F-boxes} separates exact requested-ID localization from a source-naming mismatch. The primary grounding parser expects observations linked to the requested view IDs. Some Qwen outputs use lexical aliases for the image source. Under a separate alias interpretation, 55 of 56 alias-linked boxes would meet IoU $\geq0.25$. That diagnostic is not inserted into the frozen primary score.
+
+\begin{table}[htbp]\centering\small
+\input{tables/qwen_grounding_alias}
+\caption{Qwen given-point localization records: exact-ID pass, low IoU, source alias, no box, or failed allocation. Aliases are inspected separately instead of being silently rewritten into a pass.}\label{tab:F-boxes}
+\end{table}
+
+The large N2 B alias count means that a low strict grounding count cannot be interpreted directly as failure to see the target. It also does not prove correct physical identity: an overlapping box with a plausible source name still needs the correct object and instance binding. This diagnostic separates an interface explanation from the broader scientific grounding requirement.
+
+\subsection{Scope of the cross-family conclusion}
+The Qwen experiment adds one provider family and one snapshot condition. It shows strong relation answering, successful construction on many N2 obligations, and residual complex-staircase interface errors. It does not establish a family ranking across equal tools, independent repeats, or matched inference budgets. No Claude, Gemini, Grok, DeepSeek, or Seed results are claimed here because those experiments were not run in this record.
+
+The next useful cross-family extension would preserve the same frozen core material while matching tool access or explicitly stratifying by interface. It should retain first outputs and transport failures, report both full and common-valid results, and add independently qualified buildings. Merely adding aliases from the same family would not answer the cross-family question.

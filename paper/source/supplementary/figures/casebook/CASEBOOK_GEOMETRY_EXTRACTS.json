@@ -1,0 +1,946 @@
+{
+  "type": "ANONYMOUS_GEOMETRY_EXTRACTS_NOT_BYTE_EXACT_RAW_RESPONSES",
+  "geometry_values_modified": false,
+  "extraction": "Only identifiers, geometric fields, selected proofs and saved outcomes retained; free-form text and local paths excluded.",
+  "source_identifiers": {
+    "loft_delivery": {
+      "sha256": "852061c49b3a7609e1e7a2b2a2a7215e569733de82c3ad130dc42993cb62c9e8",
+      "bytes": 7567201
+    },
+    "loft_recovered_raw": {
+      "sha256": "7318ef3c9e886ff7298ea18d812ad0f3438a1ad5e8489a9834a0d294167f81d2",
+      "bytes": 19869
+    },
+    "old_matrix_scores": {
+      "sha256": "e431b90aad3861583b482d135540da9b91ed099414f40167bcef98829de7039c",
+      "bytes": 41463
+    },
+    "old_matrix_evaluation_200": {
+      "sha256": "1963217b1bd647fdc52e1a2f5b3508216df8292f40dfac0f567d480d3b74deee",
+      "bytes": 2619056
+    },
+    "farnsworth_luna_raw": {
+      "sha256": "c59f655eac37e2259981a92d72ead08dbd65afb12df71c4979402ed0a01b11e4",
+      "bytes": 14215
+    },
+    "farnsworth_astra_raw": {
+      "sha256": "9f7a68642dbf0ce40d8c1b23f2a3139f8a3d3aae817758286ea15d20c571c67a",
+      "bytes": 41846
+    },
+    "n2_result_221": {
+      "sha256": "bac257cb53654e52a14074292cdea4cfa528bd26015700b7188fdb9f8c80d0d7",
+      "bytes": 9111023
+    },
+    "c03_raw": {
+      "sha256": "ec93df42bdddc036a15b66b373fc07e534aa89a028e53b395ed42f27b86ec4eb",
+      "bytes": 14457
+    },
+    "qwen_cs1_result_221": {
+      "sha256": "d9fd65877726f897ba030a9b8f5178eea3add075d92895a300d3f104e71b11b1",
+      "bytes": 193356
+    },
+    "qwen_lovell_raw": {
+      "sha256": "8cef2455b13ef4379569e3bd3bf4365910e5895ce87e18bf879c36d31ccf1492",
+      "bytes": 14526
+    },
+    "slab_equivalence_diagnostic": {
+      "sha256": "8d2a3bdfa9de3579d1fea7751ac6a8db1088b20c6712382d69eaf0493605e078",
+      "bytes": 6499
+    },
+    "qwen_slab_original_raw": {
+      "sha256": "4b4a5ee225e26ffb09569892de5f62c46b465c5e497d3843d92d49fb77a39647",
+      "bytes": 15541
+    },
+    "positive_raw": {
+      "sha256": "8006675ef1b54e1d91d0a2db9ddb73ebd3be3e68a1d738be780cc703b30db988",
+      "bytes": 4035
+    }
+  },
+  "cases": {
+    "I1": {
+      "units": "normalized",
+      "entities": [
+        {
+          "id": "SA",
+          "kind": "staircase",
+          "geometry": {
+            "type": "stair_run",
+            "frame": "world",
+            "start": [
+              5,
+              -1.5,
+              0
+            ],
+            "end": [
+              -5,
+              -1.5,
+              3
+            ],
+            "width": 1,
+            "thickness": 0.15,
+            "steps": 20,
+            "purpose": "solid"
+          },
+          "endpoint_interfaces": [
+            "LA0",
+            "LA1"
+          ],
+          "connects_rooms": [
+            "A1",
+            "A2"
+          ]
+        },
+        {
+          "id": "SB",
+          "kind": "staircase",
+          "geometry": {
+            "type": "stair_run",
+            "frame": "world",
+            "start": [
+              -5,
+              7.5,
+              0
+            ],
+            "end": [
+              5,
+              7.5,
+              3
+            ],
+            "width": 1,
+            "thickness": 0.15,
+            "steps": 20,
+            "purpose": "solid"
+          },
+          "endpoint_interfaces": [
+            "LB0",
+            "LB1"
+          ],
+          "connects_rooms": [
+            "B1",
+            "B2"
+          ]
+        },
+        {
+          "id": "EL",
+          "kind": "wall",
+          "geometry": {
+            "type": "box_union",
+            "frame": "world",
+            "boxes": [
+              {
+                "min": [
+                  -7.2,
+                  0,
+                  0
+                ],
+                "max": [
+                  -7,
+                  8,
+                  2.8
+                ]
+              },
+              {
+                "min": [
+                  -7,
+                  -0.2,
+                  0
+                ],
+                "max": [
+                  1,
+                  0,
+                  2.8
+                ]
+              },
+              {
+                "min": [
+                  -7,
+                  8,
+                  0
+                ],
+                "max": [
+                  -1,
+                  8.2,
+                  2.8
+                ]
+              },
+              {
+                "min": [
+                  -1,
+                  6,
+                  0
+                ],
+                "max": [
+                  7,
+                  6.2,
+                  2.8
+                ]
+              },
+              {
+                "min": [
+                  1,
+                  -2.2,
+                  0
+                ],
+                "max": [
+                  7,
+                  -2,
+                  2.8
+                ]
+              },
+              {
+                "min": [
+                  7,
+                  -2,
+                  0
+                ],
+                "max": [
+                  7.2,
+                  0,
+                  2.8
+                ]
+              },
+              {
+                "min": [
+                  0.8,
+                  -2,
+                  0
+                ],
+                "max": [
+                  1,
+                  0,
+                  2.8
+                ]
+              },
+              {
+                "min": [
+                  -1,
+                  6,
+                  0
+                ],
+                "max": [
+                  -0.8,
+                  8,
+                  2.8
+                ]
+              }
+            ],
+            "purpose": "solid"
+          }
+        }
+      ]
+    },
+    "I2": {
+      "units": "ft",
+      "entities": [
+        {
+          "id": "UPPER_TERRACE",
+          "kind": "room",
+          "geometry": {
+            "type": "box",
+            "frame": "world",
+            "purpose": "free_space",
+            "min": [
+              0,
+              0,
+              2.3333333333333335
+            ],
+            "max": [
+              22,
+              28.5,
+              13.5
+            ]
+          },
+          "floor_z": 2.3333333333333335,
+          "host_id": "MAIN_SLAB",
+          "opening_ids": [],
+          "part_of": null
+        },
+        {
+          "id": "UPPER_LANDING",
+          "kind": "landing",
+          "geometry": {
+            "type": "box",
+            "frame": "world",
+            "purpose": "interface",
+            "min": [
+              28.75,
+              -0.05,
+              2.0833333333333335
+            ],
+            "max": [
+              33.25,
+              0.5,
+              2.3333333333333335
+            ]
+          },
+          "floor_z": 2.3333333333333335,
+          "host_id": "UPPER_TERRACE",
+          "opening_ids": [],
+          "part_of": "UPPER_FLIGHT",
+          "endpoint_interfaces": [],
+          "connects_rooms": []
+        },
+        {
+          "id": "UPPER_FLIGHT",
+          "kind": "staircase",
+          "geometry": {
+            "type": "stair_run",
+            "frame": "world",
+            "purpose": "solid",
+            "start": [
+              31,
+              -0.7083333333333334,
+              0
+            ],
+            "end": [
+              31,
+              -0.05,
+              2.3333333333333335
+            ],
+            "width": 4.5,
+            "thickness": 0.25,
+            "steps": 7
+          },
+          "floor_z": null,
+          "host_id": null,
+          "opening_ids": [],
+          "part_of": null,
+          "endpoint_interfaces": [
+            "LOWER_LANDING",
+            "UPPER_LANDING"
+          ],
+          "connects_rooms": [
+            "LOWER_TERRACE",
+            "UPPER_TERRACE"
+          ]
+        }
+      ],
+      "readout": "FALSE"
+    },
+    "I3": {
+      "units": "ft",
+      "entities": [
+        {
+          "id": "STAIR_INTERNAL",
+          "kind": "staircase",
+          "geometry": {
+            "type": "stair_run",
+            "frame": "WORLD",
+            "purpose": "solid",
+            "start": [
+              45,
+              11,
+              0
+            ],
+            "end": [
+              45,
+              17,
+              10
+            ],
+            "width": 3,
+            "thickness": 0.25,
+            "steps": 16
+          },
+          "floor_z": 0,
+          "endpoint_interfaces": [
+            "L_INT_LOWER",
+            "L_INT_UPPER"
+          ],
+          "connects_rooms": [
+            "R_T08",
+            "R_HALL_2F"
+          ]
+        },
+        {
+          "id": "SLAB_2F",
+          "kind": "floor_slab",
+          "geometry": {
+            "type": "box",
+            "frame": "WORLD",
+            "purpose": "solid",
+            "min": [
+              0,
+              0,
+              8
+            ],
+            "max": [
+              50,
+              28,
+              10
+            ]
+          }
+        }
+      ],
+      "Q08_identity_correct": true,
+      "material_registered": false,
+      "tread_surface_proof": {
+        "status": "EVALUATED",
+        "full_width_intrusion_stripes": [
+          {
+            "tread_index": 12,
+            "tread_top_z": 8.125,
+            "run_axis": "Y",
+            "run_interval": [
+              15.5,
+              15.875
+            ],
+            "full_across_interval": [
+              43.5,
+              46.5
+            ],
+            "covered_across_intervals": [
+              [
+                43.5,
+                46.5
+              ]
+            ],
+            "covered_width": 3.0,
+            "tread_width": 3.0,
+            "solid_components": [
+              0
+            ],
+            "minimum_obstacle_top_z": 10.0
+          },
+          {
+            "tread_index": 13,
+            "tread_top_z": 8.75,
+            "run_axis": "Y",
+            "run_interval": [
+              15.875,
+              16.25
+            ],
+            "full_across_interval": [
+              43.5,
+              46.5
+            ],
+            "covered_across_intervals": [
+              [
+                43.5,
+                46.5
+              ]
+            ],
+            "covered_width": 3.0,
+            "tread_width": 3.0,
+            "solid_components": [
+              0
+            ],
+            "minimum_obstacle_top_z": 10.0
+          },
+          {
+            "tread_index": 14,
+            "tread_top_z": 9.375,
+            "run_axis": "Y",
+            "run_interval": [
+              16.25,
+              16.625
+            ],
+            "full_across_interval": [
+              43.5,
+              46.5
+            ],
+            "covered_across_intervals": [
+              [
+                43.5,
+                46.5
+              ]
+            ],
+            "covered_width": 3.0,
+            "tread_width": 3.0,
+            "solid_components": [
+              0
+            ],
+            "minimum_obstacle_top_z": 10.0
+          }
+        ],
+        "partial_width_intrusion_stripes": [],
+        "calculation": "Exact footprint clipping, run-axis breakpoint sweep, and cross-run interval-union coverage",
+        "scope": "Free status of the generated tread surfaces only; not complete human motion or alternative-route feasibility"
+      }
+    },
+    "I4": {
+      "units": "ft",
+      "entities": [
+        {
+          "id": "run_T03a",
+          "kind": "staircase",
+          "geometry": {
+            "type": "stair_run",
+            "frame": "world",
+            "purpose": "solid",
+            "start": [
+              28.5,
+              6,
+              0
+            ],
+            "end": [
+              28.5,
+              10,
+              5.29
+            ],
+            "width": 3,
+            "thickness": 0.6,
+            "steps": 8
+          },
+          "part_of": "st_T03",
+          "endpoint_interfaces": [
+            "if_T03b",
+            "if_T03m"
+          ],
+          "connects_rooms": [
+            "sp_T06",
+            "ld_T03m"
+          ]
+        },
+        {
+          "id": "ld_T03m",
+          "kind": "landing",
+          "geometry": {
+            "type": "box",
+            "frame": "world",
+            "purpose": "solid",
+            "min": [
+              27,
+              10,
+              5.29
+            ],
+            "max": [
+              33,
+              12,
+              5.79
+            ]
+          },
+          "floor_z": 5.29,
+          "host_id": null,
+          "part_of": "st_T03"
+        }
+      ],
+      "readout": "UNKNOWN"
+    },
+    "I5": {
+      "units": "ft",
+      "entities": [
+        {
+          "id": "interface_upper_flight_top",
+          "kind": "landing",
+          "geometry": {
+            "type": "box",
+            "frame": "building",
+            "purpose": "interface",
+            "min": [
+              32.625,
+              23.354166666667,
+              2.333333333333
+            ],
+            "max": [
+              43.95,
+              23.854166666667,
+              2.333333333333
+            ]
+          },
+          "floor_z": 2.333333333333,
+          "host_id": "terrace_upper",
+          "part_of": "flight_platform_to_platform"
+        }
+      ],
+      "readout": "NOT_EVALUABLE"
+    },
+    "I6": {
+      "units": "ft",
+      "first_encoding_boxes": [
+        {
+          "min": [
+            -6.71,
+            -10.25,
+            11.9
+          ],
+          "max": [
+            6.71,
+            -7.9,
+            12.833
+          ]
+        },
+        {
+          "min": [
+            -6.71,
+            7.9,
+            11.9
+          ],
+          "max": [
+            6.71,
+            13.0,
+            12.833
+          ]
+        },
+        {
+          "min": [
+            -6.71,
+            -7.9,
+            11.9
+          ],
+          "max": [
+            -4.6,
+            7.9,
+            12.833
+          ]
+        },
+        {
+          "min": [
+            4.6,
+            -7.9,
+            11.9
+          ],
+          "max": [
+            6.71,
+            7.9,
+            12.833
+          ]
+        }
+      ],
+      "second_encoding_box": {
+        "min": [
+          -6.71,
+          -10.25,
+          11.9
+        ],
+        "max": [
+          6.71,
+          13.0,
+          12.833
+        ]
+      },
+      "unchanged_opening": {
+        "id": "SO_WELL",
+        "kind": "stair_opening",
+        "geometry": {
+          "type": "box",
+          "frame": "WORLD",
+          "purpose": "opening",
+          "min": [
+            -4.6,
+            -7.9,
+            11.9
+          ],
+          "max": [
+            4.6,
+            7.9,
+            12.833
+          ]
+        },
+        "host_id": "SLAB2",
+        "host_ids": [
+          "SLAB2"
+        ],
+        "room_ids": [
+          "R_SH1",
+          "R_SH2"
+        ]
+      },
+      "equivalence": {
+        "A_contained_in_B": true,
+        "B_contained_in_A": true,
+        "A_minus_B_boxes": [],
+        "B_minus_A_boxes": [],
+        "A_material_volume": 155.48911499999997,
+        "B_material_volume": 155.48911499999997,
+        "tolerance": 3.280839895013123e-06,
+        "unit": "ft"
+      }
+    },
+    "I7": {
+      "units": "m",
+      "entities": [
+        {
+          "id": "tower_lower",
+          "kind": "room",
+          "geometry": {
+            "type": "box",
+            "frame": "world",
+            "purpose": "free_space",
+            "min": [
+              0,
+              0,
+              0
+            ],
+            "max": [
+              3.4,
+              3.4,
+              4.0
+            ]
+          },
+          "floor_z": 0
+        },
+        {
+          "id": "nave",
+          "kind": "room",
+          "geometry": {
+            "type": "box",
+            "frame": "world",
+            "purpose": "free_space",
+            "min": [
+              -1,
+              -10,
+              0
+            ],
+            "max": [
+              20,
+              -0.8,
+              9
+            ]
+          },
+          "floor_z": 0
+        },
+        {
+          "id": "tower_upper",
+          "kind": "room",
+          "geometry": {
+            "type": "box",
+            "frame": "world",
+            "purpose": "free_space",
+            "min": [
+              0,
+              0,
+              4.8
+            ],
+            "max": [
+              3.4,
+              3.4,
+              8
+            ]
+          },
+          "floor_z": 4.8
+        },
+        {
+          "id": "west_wall",
+          "kind": "wall",
+          "geometry": {
+            "type": "box",
+            "frame": "world",
+            "purpose": "solid",
+            "min": [
+              -0.8,
+              0,
+              0
+            ],
+            "max": [
+              0,
+              3.4,
+              4
+            ]
+          },
+          "opening_ids": [
+            "tower_window"
+          ]
+        },
+        {
+          "id": "south_wall",
+          "kind": "wall",
+          "geometry": {
+            "type": "box",
+            "frame": "world",
+            "purpose": "solid",
+            "min": [
+              0,
+              -0.8,
+              0
+            ],
+            "max": [
+              3.4,
+              0,
+              4
+            ]
+          },
+          "opening_ids": [
+            "tower_door"
+          ]
+        },
+        {
+          "id": "tower_window",
+          "kind": "window_opening",
+          "geometry": {
+            "type": "box",
+            "frame": "world",
+            "purpose": "opening",
+            "min": [
+              -0.8,
+              1.2,
+              0.8
+            ],
+            "max": [
+              0,
+              2.2,
+              2.6
+            ]
+          },
+          "host_id": "west_wall",
+          "host_ids": [
+            "west_wall"
+          ],
+          "room_ids": [
+            "tower_lower"
+          ]
+        },
+        {
+          "id": "tower_door",
+          "kind": "door_opening",
+          "geometry": {
+            "type": "box",
+            "frame": "world",
+            "purpose": "opening",
+            "min": [
+              1.2,
+              -0.8,
+              0
+            ],
+            "max": [
+              2.2,
+              0,
+              2.5
+            ]
+          },
+          "host_id": "south_wall",
+          "host_ids": [
+            "south_wall"
+          ],
+          "room_ids": [
+            "tower_lower",
+            "nave"
+          ]
+        },
+        {
+          "id": "font",
+          "kind": "obstacle",
+          "geometry": {
+            "type": "box",
+            "frame": "world",
+            "purpose": "solid",
+            "min": [
+              1.35,
+              1.35,
+              0
+            ],
+            "max": [
+              2.05,
+              2.05,
+              1
+            ]
+          }
+        },
+        {
+          "id": "upper_support",
+          "kind": "floor_slab",
+          "geometry": {
+            "type": "box",
+            "frame": "world",
+            "purpose": "solid",
+            "min": [
+              0,
+              0,
+              4.0
+            ],
+            "max": [
+              3.4,
+              3.4,
+              4.8
+            ]
+          },
+          "opening_ids": []
+        }
+      ],
+      "task_bindings": {
+        "T01": "tower_door",
+        "T02": "tower_window",
+        "T03": "tower_lower",
+        "T04": "nave",
+        "T05": "tower_upper"
+      },
+      "fixed_queries": [
+        {
+          "query_id": "Q01",
+          "predicate": "above",
+          "reference": "TRUE",
+          "actual": true,
+          "correct": true
+        },
+        {
+          "query_id": "Q02",
+          "predicate": "identity_assignment",
+          "reference": "TRUE",
+          "actual": true,
+          "correct": true
+        },
+        {
+          "query_id": "Q03",
+          "predicate": "door_host",
+          "reference": "TRUE",
+          "actual": true,
+          "correct": true
+        },
+        {
+          "query_id": "Q04",
+          "predicate": "window_host",
+          "reference": "FALSE",
+          "actual": false,
+          "correct": true
+        },
+        {
+          "query_id": "Q05",
+          "predicate": "disjoint",
+          "reference": "TRUE",
+          "actual": true,
+          "correct": true
+        },
+        {
+          "query_id": "Q06",
+          "predicate": "window_host",
+          "reference": "TRUE",
+          "actual": true,
+          "correct": true
+        }
+      ],
+      "coverage": {
+        "denominator": 5,
+        "rows": [
+          {
+            "role": "T01",
+            "entity_id": "tower_door",
+            "present": true,
+            "geometry_required": true,
+            "executable_geometry": true
+          },
+          {
+            "role": "T02",
+            "entity_id": "tower_window",
+            "present": true,
+            "geometry_required": true,
+            "executable_geometry": true
+          },
+          {
+            "role": "T03",
+            "entity_id": "tower_lower",
+            "present": true,
+            "geometry_required": true,
+            "executable_geometry": true
+          },
+          {
+            "role": "T04",
+            "entity_id": "nave",
+            "present": true,
+            "geometry_required": true,
+            "executable_geometry": true
+          },
+          {
+            "role": "T05",
+            "entity_id": "tower_upper",
+            "present": true,
+            "geometry_required": true,
+            "executable_geometry": true
+          }
+        ],
+        "present": 5,
+        "geometry_denominator": 5,
+        "geometry_covered": 5
+      },
+      "declared_fragment_success": true
+    }
+  }
+}

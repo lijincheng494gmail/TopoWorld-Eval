@@ -1,0 +1,611 @@
+{
+  "created_utc": "2026-11-05T11:26:04.183291+00:00",
+  "kind": "SYNTHETIC_SOFTWARE_FIXTURES_NOT_MODEL_RESULTS",
+  "worlds": 5,
+  "query_checks": 9,
+  "status": "PASS",
+  "code_sha256": "7a51e40c49f929ad39591f9c695be3a241bf072a97b65cf6cb2c34b8bc2cab09",
+  "schema_sha256": "bef0148367ccd62aeb94e152bfeceb86539c65f2c6795305254df98d37d9431f",
+  "rows": [
+    {
+      "fixture": "single_stair",
+      "entity_count": 5,
+      "schema": {
+        "status": "VALID",
+        "errors": []
+      },
+      "compiler_status": "EXECUTABLE",
+      "verification_status": "PASS_DECLARED_FRAGMENT",
+      "queries": [
+        {
+          "predicate": "stair_connects",
+          "args": [
+            "s",
+            "lo",
+            "hi"
+          ],
+          "expected": {
+            "value": true,
+            "status": "DETERMINATE"
+          },
+          "actual": {
+            "value": true,
+            "status": "DETERMINATE",
+            "proof": {
+              "entity_ids": [
+                "s",
+                "l0",
+                "l1",
+                "lo",
+                "hi"
+              ],
+              "endpoint_tests": [
+                {
+                  "endpoint": [
+                    -2,
+                    0,
+                    0
+                  ],
+                  "interface": "l0",
+                  "room": "lo",
+                  "landing_host_matches": true,
+                  "supported_landing_bridge": true,
+                  "bridge_proof": {
+                    "endpoint": [
+                      -2,
+                      0,
+                      0
+                    ],
+                    "floor_z": 0,
+                    "endpoint_inside_landing": true,
+                    "supported_component_reaches_room": true,
+                    "material_support_entities": [
+                      "l0"
+                    ],
+                    "floor_level_obstacle_entities": [],
+                    "scope": "Continuous supported floor-level route after subtracting immediate-above material; point-only contacts are rejected; no body-height clearance"
+                  }
+                },
+                {
+                  "endpoint": [
+                    2,
+                    0,
+                    2
+                  ],
+                  "interface": "l1",
+                  "room": "hi",
+                  "landing_host_matches": true,
+                  "supported_landing_bridge": true,
+                  "bridge_proof": {
+                    "endpoint": [
+                      2,
+                      0,
+                      2
+                    ],
+                    "floor_z": 2,
+                    "endpoint_inside_landing": true,
+                    "supported_component_reaches_room": true,
+                    "material_support_entities": [
+                      "l1"
+                    ],
+                    "floor_level_obstacle_entities": [],
+                    "scope": "Continuous supported floor-level route after subtracting immediate-above material; point-only contacts are rejected; no body-height clearance"
+                  }
+                }
+              ],
+              "ownership": {
+                "status": "UNKNOWN",
+                "owner_ids": [
+                  null,
+                  null,
+                  null
+                ],
+                "basis": "Explicit owner_id is incomplete; owner descriptions are not identities"
+              },
+              "calculation": "Endpoint-to-room connection through a continuous supported landing component",
+              "scope": "Structural interface only; ownership permission and full body clearance are separate"
+            }
+          },
+          "pass": true
+        },
+        {
+          "predicate": "same_floor",
+          "args": [
+            "lo",
+            "hi"
+          ],
+          "expected": {
+            "value": false,
+            "status": "DETERMINATE"
+          },
+          "actual": {
+            "value": false,
+            "status": "DETERMINATE",
+            "proof": {
+              "geometric_floor_surfaces": [
+                0,
+                2
+              ]
+            }
+          },
+          "pass": true
+        },
+        {
+          "predicate": "identity_assignment",
+          "args": [
+            "O_plan",
+            "O_section"
+          ],
+          "expected": {
+            "value": true,
+            "status": "DETERMINATE"
+          },
+          "actual": {
+            "value": true,
+            "status": "DETERMINATE",
+            "proof": {
+              "entity_ids": [
+                "s",
+                "s"
+              ],
+              "calculation": "Read declared observation-to-instance assignment; physical correctness requires external reference",
+              "scope": "Generated assignment equality, not an independent physical identity proof"
+            }
+          },
+          "pass": true
+        },
+        {
+          "predicate": "interface_reachable",
+          "args": [
+            "lo",
+            "hi"
+          ],
+          "expected": {
+            "value": true,
+            "status": "DETERMINATE"
+          },
+          "actual": {
+            "value": true,
+            "status": "DETERMINATE",
+            "proof": {
+              "entity_ids": [
+                "lo",
+                "hi"
+              ],
+              "admitted_edges": [
+                {
+                  "a": "lo",
+                  "b": "hi",
+                  "interface": "s",
+                  "owner": "UNKNOWN",
+                  "proof": {
+                    "entity_ids": [
+                      "s",
+                      "l0",
+                      "l1",
+                      "lo",
+                      "hi"
+                    ],
+                    "endpoint_tests": [
+                      {
+                        "endpoint": [
+                          -2,
+                          0,
+                          0
+                        ],
+                        "interface": "l0",
+                        "room": "lo",
+                        "landing_host_matches": true,
+                        "supported_landing_bridge": true,
+                        "bridge_proof": {
+                          "endpoint": [
+                            -2,
+                            0,
+                            0
+                          ],
+                          "floor_z": 0,
+                          "endpoint_inside_landing": true,
+                          "supported_component_reaches_room": true,
+                          "material_support_entities": [
+                            "l0"
+                          ],
+                          "floor_level_obstacle_entities": [],
+                          "scope": "Continuous supported floor-level route after subtracting immediate-above material; point-only contacts are rejected; no body-height clearance"
+                        }
+                      },
+                      {
+                        "endpoint": [
+                          2,
+                          0,
+                          2
+                        ],
+                        "interface": "l1",
+                        "room": "hi",
+                        "landing_host_matches": true,
+                        "supported_landing_bridge": true,
+                        "bridge_proof": {
+                          "endpoint": [
+                            2,
+                            0,
+                            2
+                          ],
+                          "floor_z": 2,
+                          "endpoint_inside_landing": true,
+                          "supported_component_reaches_room": true,
+                          "material_support_entities": [
+                            "l1"
+                          ],
+                          "floor_level_obstacle_entities": [],
+                          "scope": "Continuous supported floor-level route after subtracting immediate-above material; point-only contacts are rejected; no body-height clearance"
+                        }
+                      }
+                    ],
+                    "ownership": {
+                      "status": "UNKNOWN",
+                      "owner_ids": [
+                        null,
+                        null,
+                        null
+                      ],
+                      "basis": "Explicit owner_id is incomplete; owner descriptions are not identities"
+                    },
+                    "calculation": "Endpoint-to-room connection through a continuous supported landing component",
+                    "scope": "Structural interface only; ownership permission and full body clearance are separate"
+                  }
+                }
+              ],
+              "policy": "ALL",
+              "calculation": "Reachability over geometric door/stair interfaces, no declared connectivity edge read"
+            }
+          },
+          "pass": true
+        },
+        {
+          "predicate": "accessible",
+          "args": [
+            "lo",
+            "hi"
+          ],
+          "expected": {
+            "value": "UNKNOWN",
+            "status": "NOT_EVALUABLE"
+          },
+          "actual": {
+            "value": "UNKNOWN",
+            "status": "NOT_EVALUABLE",
+            "proof": {
+              "reason": "Full body/motion path witness not implemented; interface graph is a separate predicate"
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "fixture": "solid_minus_door_void",
+      "entity_count": 4,
+      "schema": {
+        "status": "VALID",
+        "errors": []
+      },
+      "compiler_status": "EXECUTABLE",
+      "verification_status": "PASS_DECLARED_FRAGMENT",
+      "queries": [
+        {
+          "predicate": "connected_by",
+          "args": [
+            "r0",
+            "r1",
+            "p"
+          ],
+          "expected": {
+            "value": true,
+            "status": "DETERMINATE"
+          },
+          "actual": {
+            "value": true,
+            "status": "DETERMINATE",
+            "proof": {
+              "entity_ids": [
+                "p",
+                "wall",
+                "r0",
+                "r1"
+              ],
+              "checks": {
+                "same_floor": true,
+                "fits_wall": true,
+                "opening_cut": true,
+                "opposite_exposed_room_sides": true,
+                "covers_common_floor": true,
+                "not_completely_filled": true
+              },
+              "room_side_proofs": [
+                [
+                  [
+                    [
+                      {
+                        "axis": 0,
+                        "side": "max",
+                        "coordinate": 0.0,
+                        "rectangle": {
+                          "min": [
+                            -0.6,
+                            0,
+                            0.0
+                          ],
+                          "max": [
+                            0.6,
+                            2.2,
+                            1.0
+                          ]
+                        }
+                      }
+                    ]
+                  ]
+                ],
+                [
+                  [
+                    [
+                      {
+                        "axis": 0,
+                        "side": "min",
+                        "coordinate": 0.2,
+                        "rectangle": {
+                          "min": [
+                            -0.6,
+                            0,
+                            0.0
+                          ],
+                          "max": [
+                            0.6,
+                            2.2,
+                            1.0
+                          ]
+                        }
+                      }
+                    ]
+                  ]
+                ]
+              ],
+              "blockage": {
+                "obstructions": [],
+                "remaining_open_volume": 0.792,
+                "completely_filled": false,
+                "partially_occupied": false,
+                "scope": "Declared aperture volume occupancy, not a human-sized path guarantee"
+              },
+              "common_floor_z": 0,
+              "active_aperture_region": "Original opening union intersected with z >= common floor",
+              "measurement_rule": "Cover the actual common floor; harmless subfloor void overshoot is not a suspended door",
+              "scope": "Structural above-floor aperture connection only; not complete human motion or clearance"
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "fixture": "precut_door_material",
+      "entity_count": 4,
+      "schema": {
+        "status": "VALID",
+        "errors": []
+      },
+      "compiler_status": "EXECUTABLE",
+      "verification_status": "PASS_DECLARED_FRAGMENT",
+      "queries": [
+        {
+          "predicate": "connected_by",
+          "args": [
+            "r0",
+            "r1",
+            "p"
+          ],
+          "expected": {
+            "value": true,
+            "status": "DETERMINATE"
+          },
+          "actual": {
+            "value": true,
+            "status": "DETERMINATE",
+            "proof": {
+              "entity_ids": [
+                "p",
+                "wall",
+                "r0",
+                "r1"
+              ],
+              "checks": {
+                "same_floor": true,
+                "fits_wall": true,
+                "opening_cut": true,
+                "opposite_exposed_room_sides": true,
+                "covers_common_floor": true,
+                "not_completely_filled": true
+              },
+              "room_side_proofs": [
+                [
+                  [
+                    [
+                      {
+                        "axis": 0,
+                        "side": "max",
+                        "coordinate": 0.0,
+                        "rectangle": {
+                          "min": [
+                            -0.6,
+                            0,
+                            0.0
+                          ],
+                          "max": [
+                            0.6,
+                            2.2,
+                            1.0
+                          ]
+                        }
+                      }
+                    ]
+                  ]
+                ],
+                [
+                  [
+                    [
+                      {
+                        "axis": 0,
+                        "side": "min",
+                        "coordinate": 0.2,
+                        "rectangle": {
+                          "min": [
+                            -0.6,
+                            0,
+                            0.0
+                          ],
+                          "max": [
+                            0.6,
+                            2.2,
+                            1.0
+                          ]
+                        }
+                      }
+                    ]
+                  ]
+                ]
+              ],
+              "blockage": {
+                "obstructions": [],
+                "remaining_open_volume": 0.792,
+                "completely_filled": false,
+                "partially_occupied": false,
+                "scope": "Declared aperture volume occupancy, not a human-sized path guarantee"
+              },
+              "common_floor_z": 0,
+              "active_aperture_region": "Original opening union intersected with z >= common floor",
+              "measurement_rule": "Cover the actual common floor; harmless subfloor void overshoot is not a suspended door",
+              "scope": "Structural above-floor aperture connection only; not complete human motion or clearance"
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "fixture": "blind_door_pocket",
+      "entity_count": 4,
+      "schema": {
+        "status": "VALID",
+        "errors": []
+      },
+      "compiler_status": "EXECUTABLE",
+      "verification_status": "VIOLATION",
+      "queries": [
+        {
+          "predicate": "connected_by",
+          "args": [
+            "r0",
+            "r1",
+            "p"
+          ],
+          "expected": {
+            "value": false,
+            "status": "DETERMINATE"
+          },
+          "actual": {
+            "value": false,
+            "status": "DETERMINATE",
+            "proof": {
+              "entity_ids": [
+                "p",
+                "wall",
+                "r0",
+                "r1"
+              ],
+              "checks": {
+                "same_floor": true,
+                "fits_wall": false,
+                "opening_cut": true,
+                "opposite_exposed_room_sides": false,
+                "covers_common_floor": true,
+                "not_completely_filled": true
+              },
+              "room_side_proofs": [
+                [
+                  [
+                    []
+                  ]
+                ],
+                [
+                  [
+                    []
+                  ]
+                ]
+              ],
+              "blockage": {
+                "obstructions": [],
+                "remaining_open_volume": 0.3960000000000001,
+                "completely_filled": false,
+                "partially_occupied": false,
+                "scope": "Declared aperture volume occupancy, not a human-sized path guarantee"
+              },
+              "common_floor_z": 0,
+              "active_aperture_region": "Original opening union intersected with z >= common floor",
+              "measurement_rule": "Cover the actual common floor; harmless subfloor void overshoot is not a suspended door",
+              "scope": "Structural above-floor aperture connection only; not complete human motion or clearance"
+            }
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "fixture": "nonwall_host",
+      "entity_count": 4,
+      "schema": {
+        "status": "VALID",
+        "errors": []
+      },
+      "compiler_status": "EXECUTABLE",
+      "verification_status": "NOT_EVALUABLE",
+      "queries": [
+        {
+          "predicate": "connected_by",
+          "args": [
+            "r0",
+            "r1",
+            "p"
+          ],
+          "expected": {
+            "value": "UNKNOWN",
+            "status": "CONTRACT_INVALID"
+          },
+          "actual": {
+            "value": "UNKNOWN",
+            "status": "CONTRACT_INVALID",
+            "proof": {
+              "reason": "An explicitly named opening host is not a wall",
+              "host_ids": [
+                "wall",
+                "r0"
+              ],
+              "nonwall_host_ids": [
+                "r0"
+              ]
+            }
+          },
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "door_material_equivalence": {
+    "first_contains_second": true,
+    "second_contains_first": true,
+    "material_volume_solid_minus_void": 1.8719999999999997,
+    "material_volume_precut_union": 1.8719999999999997,
+    "scope": "One synthetic wall/door software fixture, not all encodings or real buildings"
+  },
+  "model_calls": 0,
+  "research_outputs_changed": false,
+  "historical_scores_recomputed": false,
+  "python": "3.13.0 (v3.13.0:60403a5409f, Oct  7 2024, 00:37:40) [Clang 15.0.0 (clang-1500.3.9.4)]"
+}

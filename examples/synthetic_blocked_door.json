@@ -1,0 +1,132 @@
+{
+  "schema": "topoworld_executable_v1",
+  "case_id": "SYNTHETIC_TWO_ROOMS",
+  "units": "m",
+  "coordinate_system": {
+    "up_axis": "Z",
+    "handedness": "right"
+  },
+  "frames": [],
+  "entities": [
+    {
+      "id": "left",
+      "kind": "room",
+      "geometry": {
+        "type": "box",
+        "min": [
+          -3,
+          0,
+          0
+        ],
+        "max": [
+          0,
+          3,
+          3
+        ],
+        "purpose": "free_space",
+        "parameter_status": "HYPOTHETICAL_COMPLETION"
+      },
+      "floor_z": 0
+    },
+    {
+      "id": "right",
+      "kind": "room",
+      "geometry": {
+        "type": "box",
+        "min": [
+          0.2,
+          0,
+          0
+        ],
+        "max": [
+          3.2,
+          3,
+          3
+        ],
+        "purpose": "free_space",
+        "parameter_status": "HYPOTHETICAL_COMPLETION"
+      },
+      "floor_z": 0
+    },
+    {
+      "id": "wall",
+      "kind": "wall",
+      "geometry": {
+        "type": "box",
+        "min": [
+          0,
+          0,
+          0
+        ],
+        "max": [
+          0.2,
+          3,
+          3
+        ],
+        "purpose": "solid",
+        "parameter_status": "HYPOTHETICAL_COMPLETION"
+      },
+      "opening_ids": [
+        "door"
+      ]
+    },
+    {
+      "id": "door",
+      "kind": "door_opening",
+      "geometry": {
+        "type": "box",
+        "min": [
+          0,
+          1,
+          0
+        ],
+        "max": [
+          0.2,
+          2,
+          2.2
+        ],
+        "purpose": "opening",
+        "parameter_status": "HYPOTHETICAL_COMPLETION"
+      },
+      "host_id": "wall",
+      "room_ids": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "id": "block",
+      "kind": "obstacle",
+      "geometry": {
+        "type": "box",
+        "min": [
+          0,
+          1,
+          0
+        ],
+        "max": [
+          0.2,
+          2,
+          2.2
+        ],
+        "purpose": "solid",
+        "parameter_status": "HYPOTHETICAL_COMPLETION"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "synthetic_fixture",
+      "active": true
+    }
+  ],
+  "evidence": [],
+  "observations": [],
+  "relations": [],
+  "task_bindings": {
+    "door": "door",
+    "left": "left",
+    "right": "right"
+  },
+  "notes": "Synthetic evaluator demonstration. All dimensions are hypothetical; no model or building observation."
+}

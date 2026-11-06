@@ -1,0 +1,50 @@
+\section{Evidence Revision and Historical Feedback Pilot}\label{app:H}
+\subsection{Primary evidence-revision design}
+A coherent world should respond to new evidence and later withdrawal without preserving unsupported facts or damaging unrelated supported relations. The retained revision experiment uses eight configurations on two buildings, with four stages per configuration--building pair. This gives 64 allocated stages. It is a small longitudinal experiment, separate from the N2 and CS1 static conditions.
+
+E0 constructs a world from the initially permitted plans. A metric height that needs a section remains unknown. E1 adds the section evidence and asks for the resulting measured height. E2 withdraws that section and revises the world. F2 starts fresh with the same effective evidence available after the withdrawal. The E2--F2 comparison asks whether the incremental world agrees with a fresh construction under the same currently valid evidence.
+
+The tasks retain source identifiers, support dependencies, explicit knowledge state, and selected unaffected relations. A successful E1 should incorporate the new supported height. A successful E2 should stop treating that measurement as known after its source is removed. It should also preserve supported spatial relations that do not depend on the withdrawn source.
+
+The design tests submitted state, not hidden neural memory. Source withdrawal differs from assertion withdrawal, identity correction, and scope correction. Automatic raw-evidence recompilation for all four is not tested.
+
+\subsection{Stage results with delivery retained}
+Table~\ref{tab:H-stages} separates validity, explicit knowledge-state success, and relation preservation. The primary relation denominator is 80 per stage: five retained obligations for each of 16 allocations. The valid-only denominator is five times the valid allocation count. Reporting only valid outputs would conceal six E1 parse failures and other delivery losses.
+
+\begin{table}[htbp]\centering\small
+\begin{tabular}{lrrrrr}\toprule
+Stage & Allocated & Valid & Knowledge & Relations/full & Relations/valid\\\midrule
+E0 & 16 & 15 & 15/15 & 68/80 & 68/75\\
+E1 & 16 & 10 & 10/10 & 49/80 & 49/50\\
+E2 & 16 & 13 & 13/13 & 58/80 & 58/65\\
+F2 & 16 & 14 & 14/14 & 65/80 & 65/70\\\bottomrule
+\end{tabular}
+\caption{Primary revision results. Knowledge success is conditional on a valid output. E1's ten valid worlds also realize the added height correctly. Relation denominators retain failed allocations in the full column.}\label{tab:H-stages}
+\end{table}
+
+E0 has one Schema failure. E1 has six raw/parse failures, E2 has three, and F2 has one raw/parse failure plus one missing output. Across the 52 valid stages, the explicit source-activity and active-dependency records are clean under the implemented checks. The ten valid E1 worlds also have the correct measured-height geometry. These are positive results for the submitted fields and bounded numeric obligation.
+
+E2 and F2 are both valid for 11 configuration--building pairs. Their knowledge states agree in all 11, but only 51/55 retained relation readouts agree. E2 alone is wrong in three discordant obligations, and F2 alone in one. Clean metadata therefore does not guarantee identical world behavior.
+
+The record establishes no incremental efficiency advantage. F2 is a new generation with a different prompt and history, not an equal-cost deterministic recomputation. Its differences from E2 may include stochastic construction and revision-history effects.
+
+\subsection{Evidence can leak through a variable domain}
+A previous American Farmhouse development diagnostic illustrates why deleting a support edge is insufficient. The recorded variable is the riser height in inches, not the floor-to-floor height used in the primary revision task. Its initial domain had been compiled using a later source as $D_h=\{7.5\}$ inches. Removing the explicit constraint $h=7.5$ leaves the variable domain unchanged. The feasible set still implies that height even though the supporting source is no longer active.
+
+A proper evidence-independent initialization must instead retain the initially permissible domain $D_h^0$, and every active restriction must be derived from currently valid evidence. Candidate generation, identity bindings, cached factors, and precompiled domains all belong to the audit. This is ordinary dependency-management logic; the benchmark does not present it as a new truth-maintenance theorem~\cite{doyle1979}.
+
+The primary model stages check explicit outputs and selected readouts. They do not provide a complete proof that all latent domain restrictions or earlier image interpretations have been recompiled from raw evidence. The distinction sets the boundary for the revision claim: the submitted knowledge state behaves well on valid stages, while relation preservation is imperfect and deeper recompilation remains to be measured.
+
+\subsection{Historical A/B/C/D feedback pilot}
+Before the 14-building study, an independent pilot used Robie House and Farnsworth House with eight configurations and four conditions, yielding 64 effective outputs. Its labels differ from the primary R/A/B design: A constructs directly; B receives correct relations; C revises the B seed once using actual checker feedback; D revises that same seed once after self-review. C and D do not regenerate a new B seed.
+
+Under evaluator 2.1.0, the pilot has A/B/C/D relation totals 66/72, 66/72, 72/72, and 70/72. All-known-correct world counts are 14/16, 14/16, 16/16, and 14/16. These numbers are historical pilot results, not additional observations under evaluator 2.2.1 or independent new buildings in the primary study.
+
+The apparent C gain requires mechanism inspection. Five restored readouts largely follow a repaired JSON comma; D also repairs the same syntax problem. Another C change corrects owner metadata rather than moving physical material. A headline such as ``feedback solves geometry'' would therefore be unsupported by the total score alone.
+
+One 5.6 Terra B/C world still has a floor intruding into three stair treads. D removes that intrusion but loses a strict endpoint relation score. This example demonstrates why relation readout and material consistency need separate columns: an output can improve the represented material while becoming worse under an interface obligation.
+
+The pilot also records 28 C/D outputs run under a wrong actual model condition. They were excluded for model-condition qualification and retained alongside the 64 effective outputs, giving 92 archived artifacts. They were not excluded because of their scores. The earlier two-building B0/B1 matrix is another pilot: 72/72 direct answers and 64/72 world readouts under evaluator 2.0, later 65/72 after an instrument correction. It is not pooled into the primary R/A/B totals.
+
+\subsection{Revision conclusions and next test}
+Valid stages satisfy the measured knowledge-state obligation, but revision does not always agree with fresh construction on retained relations. A stronger follow-up should freeze evidence-independent domains, add identity and scope corrections, and compare all bindings and geometric readouts with a fresh raw-input recompile. That study remains uncompleted.

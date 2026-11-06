@@ -1,0 +1,69 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{times,amsmath,amssymb,graphicx,booktabs,array,longtable}
+\usepackage{caption,xcolor,listings,enumitem,url}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\textfloatsep}{12pt}
+\setlength{\floatsep}{10pt}
+\setcounter{tocdepth}{1}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\newcommand{\neval}{\texttt{NOT\_EVALUABLE}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\sourcefile}[1]{\texttt{\detokenize{#1}}}
+\lstset{basicstyle=\ttfamily\fontsize{9}{11}\selectfont,breaklines=true,columns=fullflexible,keepspaces=true,showstringspaces=false,frame=single,framerule=.2pt,rulecolor=\color{gray},xleftmargin=2pt,xrightmargin=2pt}
+\captionsetup{font=small,labelfont=bf}
+\setlist{nosep,leftmargin=1.5em}
+\hypersetup{pdftitle={TopoWorld-Eval: Supplementary Technical Report},pdfauthor={Jincheng Li; Yuxuan Li},pdfsubject={Public supplementary technical report}}
+\begin{document}
+\begin{titlepage}
+\centering
+\vspace*{1.15in}
+{\LARGE\bfseries TopoWorld-Eval\par}
+\vspace{.25in}
+{\Large From Spatial Answers to Coherent, Grounded,\par and Revisable Executable Worlds\par}
+\vspace{.4in}
+{\large Supplementary Technical Report\par}
+\vspace{.2in}
+Jincheng Li\qquad Yuxuan Li\par
+\vspace{.6in}
+\begin{minipage}{.88\textwidth}
+This report provides the dataset qualification, exact task conditions, executable representation, evaluator audit, full results, and reproducibility procedure behind the main paper. It separates correct relation answers, valid world construction, material coherence, image grounding, and evidence revision.
+
+The static study contains 14 physical buildings and 42 drawing pages. Eight fixed Codex product configurations contribute 624 static task allocations and 64 revision stages. A tool-free Qwen API condition contributes 42 further allocations. Repeated conditions on the same buildings remain identifiable throughout.
+
+All reported primary scores use the retained first outputs and the declared evaluator versions. The accompanying package supports deterministic rescoring. It makes no model request. Historical pilots and software fixtures are marked separately from the primary study.
+\end{minipage}
+\vfill
+Public technical report release: 6 November 2026\par
+Frozen primary evaluator: 2.2.1\par
+\end{titlepage}
+\tableofcontents
+\vspace{.3in}
+\textbf{Reading guide.} For source qualification, start with Appendix~\ref{app:A}. For exact inputs, use Appendix~\ref{app:B}. Appendices~\ref{app:C}--\ref{app:D} explain what the representation and checker actually compute. Appendices~\ref{app:E}--\ref{app:H} separate static GPT results, Qwen, grounding, and revisions. Appendix~\ref{app:I} shows retained geometric examples. Appendix~\ref{app:J} gives the statistics and replay procedure.
+
+\textbf{Terminology.} R is independent relation answering; A is image-conditioned world construction; B adds correct determinate relation values. These are the primary R/A/B conditions, not the older B0/B1 labels. The historical A/B/C/D pilot uses a different design and appears only in Appendix~\ref{app:H}. A product model alias identifies a recorded Codex setting, not a verified immutable neural checkpoint.
+
+\appendix
+\clearpage\input{sections/A_dataset}
+\clearpage\input{sections/B_protocol}
+\clearpage\input{sections/C_representation}
+\clearpage\input{sections/D_evaluator}
+\clearpage\input{sections/E_gpt}
+\clearpage\input{sections/F_qwen}
+\clearpage\input{sections/G_grounding}
+\clearpage\input{sections/H_revision}
+\clearpage\input{sections/I_casebook}
+\clearpage\input{sections/J_reproducibility}
+\clearpage
+\section*{LLM Usage}
+\addcontentsline{toc}{section}{LLM Usage and References}
+AI assistants supported code development, experiment organization, source-linked analysis, and manuscript drafting. The evaluated model outputs are retained as experimental records. The author reports personally checking all 96 reference relations. This confirmation is recorded separately from the original AI-assisted annotation metadata; it is not an independent expert certification. Deterministic compilation and rescoring do not count as new model trials.
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

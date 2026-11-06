@@ -1,0 +1,152 @@
+{
+  "schema": "topoworld_executable_v1",
+  "case_id": "synthetic_technical_example",
+  "units": "m",
+  "coordinate_system": {
+    "up": "Z"
+  },
+  "frames": [],
+  "sources": [
+    {
+      "id": "S_fixture",
+      "active": true
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E_fixture",
+      "source_id": "S_fixture",
+      "quote": "Synthetic software example; not a model prediction."
+    }
+  ],
+  "observations": [
+    {
+      "id": "O_plan",
+      "source_id": "S_fixture",
+      "entity_ids": [
+        "s"
+      ]
+    },
+    {
+      "id": "O_section",
+      "source_id": "S_fixture",
+      "entity_ids": [
+        "s"
+      ]
+    }
+  ],
+  "relations": [],
+  "task_bindings": {},
+  "entities": [
+    {
+      "id": "lo",
+      "kind": "room",
+      "floor_z": 0,
+      "owner": "lower floor of the house",
+      "geometry": {
+        "type": "box",
+        "min": [
+          -4,
+          -2,
+          0
+        ],
+        "max": [
+          0,
+          2,
+          3
+        ],
+        "parameter_status": "HYPOTHETICAL_COMPLETION"
+      }
+    },
+    {
+      "id": "hi",
+      "kind": "room",
+      "floor_z": 2,
+      "owner": "upper floor",
+      "geometry": {
+        "type": "box",
+        "min": [
+          2,
+          -2,
+          2
+        ],
+        "max": [
+          6,
+          2,
+          5
+        ],
+        "parameter_status": "HYPOTHETICAL_COMPLETION"
+      }
+    },
+    {
+      "id": "l0",
+      "kind": "landing",
+      "host_id": "lo",
+      "floor_z": 0,
+      "geometry": {
+        "type": "box",
+        "min": [
+          -2.5,
+          -0.8,
+          -0.1
+        ],
+        "max": [
+          -1.5,
+          0.8,
+          0
+        ],
+        "parameter_status": "HYPOTHETICAL_COMPLETION"
+      }
+    },
+    {
+      "id": "l1",
+      "kind": "landing",
+      "host_id": "hi",
+      "floor_z": 2,
+      "geometry": {
+        "type": "box",
+        "min": [
+          1.5,
+          -0.8,
+          1.9
+        ],
+        "max": [
+          2.5,
+          0.8,
+          2
+        ],
+        "parameter_status": "HYPOTHETICAL_COMPLETION"
+      }
+    },
+    {
+      "id": "s",
+      "kind": "staircase",
+      "owner": "main staircase",
+      "connects_rooms": [
+        "lo",
+        "hi"
+      ],
+      "endpoint_interfaces": [
+        "l0",
+        "l1"
+      ],
+      "geometry": {
+        "type": "stair_run",
+        "start": [
+          -2,
+          0,
+          0
+        ],
+        "end": [
+          2,
+          0,
+          2
+        ],
+        "width": 1,
+        "thickness": 0.1,
+        "steps": 8,
+        "parameter_status": "HYPOTHETICAL_COMPLETION"
+      }
+    }
+  ]
+}

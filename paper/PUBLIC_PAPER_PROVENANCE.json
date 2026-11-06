@@ -1,0 +1,41 @@
+{
+  "version": "1.0.0",
+  "date": "2026-11-06",
+  "authors": [
+    "Jincheng Li",
+    "Yuxuan Li"
+  ],
+  "derivation": "Public technical-report presentation with author names. Scientific sections, tables, references, and included figure assets retain their source bytes. Original research documents are retained separately.",
+  "documents": {
+    "main": {
+      "pdf": "paper/TopoWorld-Eval_Technical_Report.pdf",
+      "sha256": "b900e06ad3187d88f078852403025c1f63e6c3dd73d1ca5064f638a08e7ae148",
+      "bytes": 409108,
+      "pages": 9,
+      "source_pdf_sha256": "8623a832e271a911639a677cb11254e906e61c00414b44f19a398d9652889b29",
+      "public_text_flags": [],
+      "both_authors_present": true
+    },
+    "supplementary": {
+      "pdf": "paper/TopoWorld-Eval_Supplementary.pdf",
+      "sha256": "ffdde9ba536d27a91ee0f685054446d714812733bf53066741c51b3840e2912f",
+      "bytes": 731523,
+      "pages": 37,
+      "source_pdf_sha256": "d63e8cd0126c6f9da0d36200bb8edb592c24fdbfd68cda0b2dbc4f191c8f7bf3",
+      "public_text_flags": [],
+      "both_authors_present": true
+    }
+  },
+  "all_scientific_sources_byte_equal": true,
+  "scientific_files_verified": 80,
+  "presentation_changes": [
+    "Author names replace anonymous presentation.",
+    "Public article layout omits review options, watermarks, and line numbering.",
+    "Public PDF metadata names both authors.",
+    "Supplementary release date identifies this public derivative."
+  ],
+  "source_pdf_hashes": {
+    "main": "8623a832e271a911639a677cb11254e906e61c00414b44f19a398d9652889b29",
+    "supplementary": "d63e8cd0126c6f9da0d36200bb8edb592c24fdbfd68cda0b2dbc4f191c8f7bf3"
+  }
+}

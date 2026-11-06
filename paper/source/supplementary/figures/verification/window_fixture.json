@@ -1,0 +1,93 @@
+{
+  "schema": "topoworld_executable_v1",
+  "case_id": "instrument_fixture",
+  "units": "m",
+  "coordinate_system": {
+    "up": "Z"
+  },
+  "frames": [],
+  "sources": [],
+  "evidence": [],
+  "relations": [],
+  "entities": [
+    {
+      "id": "r0",
+      "kind": "room",
+      "geometry": {
+        "type": "box",
+        "min": [
+          -3,
+          -2,
+          0
+        ],
+        "max": [
+          0,
+          2,
+          3
+        ]
+      },
+      "floor_z": 0
+    },
+    {
+      "id": "r1",
+      "kind": "room",
+      "geometry": {
+        "type": "box",
+        "min": [
+          0.2,
+          -2,
+          0
+        ],
+        "max": [
+          3,
+          2,
+          3
+        ]
+      },
+      "floor_z": 0
+    },
+    {
+      "id": "wall",
+      "kind": "wall",
+      "geometry": {
+        "type": "box",
+        "min": [
+          0,
+          -2,
+          0
+        ],
+        "max": [
+          0.2,
+          2,
+          3
+        ]
+      },
+      "opening_ids": [
+        "p"
+      ],
+      "host_id": "r1"
+    },
+    {
+      "id": "p",
+      "kind": "window_opening",
+      "geometry": {
+        "type": "box",
+        "min": [
+          -0.05,
+          -0.6,
+          1
+        ],
+        "max": [
+          0.25,
+          0.6,
+          2.2
+        ]
+      },
+      "host_id": "wall",
+      "room_ids": [
+        "r0"
+      ]
+    }
+  ],
+  "task_bindings": {}
+}

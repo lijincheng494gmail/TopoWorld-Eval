@@ -1,0 +1,31 @@
+{
+ "case_id":"C02_ut0027",
+ "title":"Rock Schoolhouse, First West & First South Streets, Fillmore, Millard County, UT",
+ "role_locators":{"T01":{"view_id":"V02","point_xy":[0.3355,0.453],"kind_hint":"room"},"T02":{"view_id":"V02","point_xy":[0.281,0.668],"kind_hint":"door_opening"},"T03":{"view_id":"V02","point_xy":[0.405,0.228],"kind_hint":"window_opening"},"T04":{"view_id":"V02","point_xy":[0.3975,0.668],"kind_hint":"door_opening"},"T05":{"view_id":"V02","point_xy":[0.2635,0.228],"kind_hint":"window_opening"}},
+ "required_roles": [
+  "T01",
+  "T02",
+  "T03",
+  "T04",
+  "T05"
+ ],
+ "observation_locators": [
+  {"id":"O01","view_id":"V02","point_xy":[0.2635,0.228],"kind_hint":"window_opening"},
+  {"id":"O02","view_id":"V02","point_xy":[0.405,0.228],"kind_hint":"window_opening"},
+  {"id":"O03","view_id":"V02","point_xy":[0.672,0.4765],"kind_hint":"window_opening"}
+ ],
+ "scope":"Reconstruct the bounded target fragment identified by the supplied points and classes. Other structure may be UNKNOWN. Points specify locations to inspect, not object extents, physical identity, floor membership, or host assignments.",
+ "input_condition":"POINT_ANCHORED_IMAGE_INPUT",
+ "queries": [
+  {"id":"Q01","predicate":"identity_assignment","args":["O01","O03"],"question":"Do observations O01 and O03 refer to the same physical instance?","evaluation_layer":"IDENTITY"},
+  {"id":"Q02","predicate":"disjoint","args":["T05","T03"],"question":"Are the interiors of T05 and T03 disjoint?","evaluation_layer":"GEOMETRIC"},
+  {"id":"Q03","predicate":"window_host","args":["T05","T01"],"question":"Is window opening T05 incident to space T01?","evaluation_layer":"GEOMETRIC"},
+  {"id":"Q04","predicate":"door_host","args":["T02","T01"],"question":"Is door opening T02 attached to space T01?","evaluation_layer":"GEOMETRIC"},
+  {"id":"Q05","predicate":"window_host","args":["T03","T01"],"question":"Is window opening T03 incident to space T01?","evaluation_layer":"GEOMETRIC"},
+  {"id":"Q06","predicate":"identity_assignment","args":["O01","O02"],"question":"Do observations O01 and O02 refer to the same physical instance?","evaluation_layer":"IDENTITY"}
+ ],
+ "views": [
+  {"view_id":"V01","path":"V01.png","width":3200,"height":2528},
+  {"view_id":"V02","path":"V02.png","width":3200,"height":2522}
+ ]
+}

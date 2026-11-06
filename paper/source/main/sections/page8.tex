@@ -1,0 +1,79 @@
+\section{Evidence Revision and World Maintenance}
+\label{sec:revision}
+
+\begin{center}
+\figfile{figures/figure4_revision.pdf}{\columnwidth}
+\captionof{figure}{Evidence arrival and withdrawal differ from physical
+building change. E2 and fresh F2 use the same effective sources; retained
+knowledge and relation readouts are compared.}
+\label{fig:revision}
+\end{center}
+
+The revision subset uses two buildings, eight configurations, and four
+stages, totaling 64 stages. E0 receives plans; E1 adds a section
+supporting an exact height; E2 withdraws it in the same context.
+F2 constructs afresh from E2's effective evidence. The three sequential
+stages are not independent repetitions.
+
+\begin{center}
+\small
+\input{tables/revision}
+\captionof{table}{Revision accounting. Valid: contract-valid outputs;
+Knowledge: correct explicit status among valid outputs; Relations:
+retained correct readouts over all allocated opportunities.}
+\label{tab:revision}
+\end{center}
+
+All 52 valid stages have correct explicit height-knowledge states,
+active sources, and support edges. All ten valid E1 worlds also
+implement the supplied height. Withdrawal may return a measured
+fact to unknown while leaving hypothetical completion coordinates:
+those are different claims.
+
+E2 and F2 have 11 jointly valid building--configuration pairs.
+Their knowledge states agree 11/11, but retained readouts agree
+51/55. E2 alone is wrong in three cases and F2 alone in one.
+Explicit source-state accuracy and spatial retention therefore need
+separate measurements. These differences do not by themselves
+identify stale neural memory as their cause.
+
+\section{Discussion and Limitations}
+\label{sec:discussion}
+\paragraph{One question, several observable capabilities.}
+High R accuracy, a valid program, and a coherent fragment are different
+achievements. Correct relations can improve construction without
+ensuring valid interfaces or harmless additional material.
+Qwen's N2 success also shows that the difference is not uniformly
+large. The benchmark measures when these outputs align and diverge.
+
+\paragraph{Scope of the evidence.}
+The dataset is small and target-assisted. CS1 adds unit information;
+N2 reuses v1 buildings; revision is not repeated under N2/CS1.
+Public pretraining exposure and layout-family dependence are unresolved.
+References describe selected drawing-supported relations, not complete
+site measurements. Different provider tools and reasoning budgets
+cannot isolate neural weights.
+
+\paragraph{Scope of geometric checks.}
+The compiler supports finite box/stair fragments, not general BIM,
+arbitrary meshes, curved stairs, structural safety, or full human
+clearance. Undeclared obstacles remain outside its scope.
+The slab equivalence issue is an instrument limitation; future
+corrections should be versioned and applied uniformly.
+
+\paragraph{Scope of revision.}
+Removing a source ID does not prove that information has disappeared
+from candidate domains, bindings, initialization, or hidden state.
+Identity and scope corrections need further task variants.
+Future comparisons should distinguish them and include ordinary
+reconstruction and source-tracking controls where applicable.
+
+\section{Conclusion}
+\tw{} evaluates whether answers, executable geometry, grounding,
+and evidence updates remain compatible with one observed world.
+The preserved experiments show condition-dependent task differences,
+both benefits and regressions from correct relations, material
+conflicts outside fixed queries, and a separation between explicit
+knowledge updates and retained spatial conclusions.
+Joint measurement gives a more specific account of spatial
+understanding than answer accuracy or geometric validity alone.
